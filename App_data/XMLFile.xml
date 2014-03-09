@@ -1,0 +1,723 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Event>
+  <Table number="1" full="false">
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+  </Table>
+  <Table number="2" full="false">
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+  </Table>
+  <Table number="3" full="false">
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+  </Table>
+  <Table number="4" full="false">
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+  </Table>
+  <Table number="5" full="false">
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+  </Table>
+  <Table number="6" full="false">
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+  </Table>
+  <Table number="7" full="false">
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+  </Table>
+  <Table number="8" full="false">
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+  </Table>
+  <Table number="9" full="false">
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+  </Table>
+  <Table number="10" full="false">
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+  </Table>
+  <Table number="11" full="false">
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+  </Table>
+  <Table number="12" full="false">
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+  </Table>
+  <Table number="13" full="false">
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+  </Table>
+  <Table number="14" full="false">
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+  </Table>
+  <Table number="15" full="false">
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+  </Table>
+  <Table number="16" full="false">
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+  </Table>
+  <Table number="17" full="false">
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+  </Table>
+  <Table number="18" full="false">
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+  </Table>
+  <Table number="19" full="false">
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+  </Table>
+  <Table number="20" full="false">
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+  </Table>
+  <Table number="21" full="false">
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+  </Table>
+  <Table number="22" full="false">
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+  </Table>
+  <Table number="23" full="false">
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+  </Table>
+  <Table number="24" full="false">
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+  </Table>
+  <Table number="25" full="false">
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+  </Table>
+  <Table number="26" full="false">
+    <Chair taken="true" name="Jason Hartl" school="Louis Riel" time="2013-09-13T13:43:52.2806857-07:00" email="jchartl@cbe.ab.ca" phone="403-202-3909" comment="" />
+    <Chair taken="true" name="Jason Hartl" school="Louis Riel" time="2013-09-13T13:43:52.2806857-07:00" email="jchartl@cbe.ab.ca" phone="403-202-3909" comment="" />
+    <Chair taken="true" name="Jason Hartl" school="Louis Riel" time="2013-09-13T13:43:52.2806857-07:00" email="jchartl@cbe.ab.ca" phone="403-202-3909" comment="" />
+    <Chair taken="true" name="Jason Hartl" school="Louis Riel" time="2013-09-13T13:43:52.2806857-07:00" email="jchartl@cbe.ab.ca" phone="403-202-3909" comment="" />
+    <Chair taken="true" name="Jason Hartl" school="Louis Riel" time="2013-09-13T13:43:52.2806857-07:00" email="jchartl@cbe.ab.ca" phone="403-202-3909" comment="" />
+    <Chair taken="true" name="Jason Hartl" school="Louis Riel" time="2013-09-13T13:43:52.2806857-07:00" email="jchartl@cbe.ab.ca" phone="403-202-3909" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+  </Table>
+  <Table number="27" full="false">
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+  </Table>
+  <Table number="28" full="false">
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+  </Table>
+  <Table number="29" full="false">
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+  </Table>
+  <Table number="30" full="true">
+    <Chair taken="true" name="Robin Laycock" school="John Ware School" time="2013-09-12T13:04:31.1220734-07:00" email="rglaycock@cbe.ab.ca" phone="403-777-7930" comment="" />
+    <Chair taken="true" name="Robin Laycock" school="John Ware School" time="2013-09-12T13:04:31.1220734-07:00" email="rglaycock@cbe.ab.ca" phone="403-777-7930" comment="" />
+    <Chair taken="true" name="Robin Laycock" school="John Ware School" time="2013-09-12T13:04:31.1220734-07:00" email="rglaycock@cbe.ab.ca" phone="403-777-7930" comment="" />
+    <Chair taken="true" name="Robin Laycock" school="John Ware School" time="2013-09-12T13:04:31.1220734-07:00" email="rglaycock@cbe.ab.ca" phone="403-777-7930" comment="" />
+    <Chair taken="true" name="Robin Laycock" school="John Ware School" time="2013-09-12T13:04:31.1220734-07:00" email="rglaycock@cbe.ab.ca" phone="403-777-7930" comment="" />
+    <Chair taken="true" name="Robin Laycock" school="John Ware School" time="2013-09-12T13:04:31.1220734-07:00" email="rglaycock@cbe.ab.ca" phone="403-777-7930" comment="" />
+    <Chair taken="true" name="Robin Laycock" school="John Ware School" time="2013-09-12T13:04:31.1220734-07:00" email="rglaycock@cbe.ab.ca" phone="403-777-7930" comment="" />
+    <Chair taken="true" name="Robin Laycock" school="John Ware School" time="2013-09-12T13:04:31.1220734-07:00" email="rglaycock@cbe.ab.ca" phone="403-777-7930" comment="" />
+    <Chair taken="true" name="Robin Laycock" school="John Ware School" time="2013-09-12T13:04:31.1220734-07:00" email="rglaycock@cbe.ab.ca" phone="403-777-7930" comment="" />
+    <Chair taken="true" name="Robin Laycock" school="John Ware School" time="2013-09-12T13:04:31.1220734-07:00" email="rglaycock@cbe.ab.ca" phone="403-777-7930" comment="" />
+  </Table>
+  <Table number="31" full="false">
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+  </Table>
+  <Table number="32" full="false">
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+  </Table>
+  <Table number="33" full="false">
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+  </Table>
+  <Table number="34" full="false">
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+  </Table>
+  <Table number="35" full="true">
+    <Chair taken="true" name="Robin Laycock" school="John Ware School" time="2013-09-12T13:04:31.1220734-07:00" email="rglaycock@cbe.ab.ca" phone="403-777-7930" comment="" />
+    <Chair taken="true" name="Robin Laycock" school="John Ware School" time="2013-09-12T13:04:31.1220734-07:00" email="rglaycock@cbe.ab.ca" phone="403-777-7930" comment="" />
+    <Chair taken="true" name="Robin Laycock" school="John Ware School" time="2013-09-12T13:04:31.1220734-07:00" email="rglaycock@cbe.ab.ca" phone="403-777-7930" comment="" />
+    <Chair taken="true" name="Robin Laycock" school="John Ware School" time="2013-09-12T13:04:31.1220734-07:00" email="rglaycock@cbe.ab.ca" phone="403-777-7930" comment="" />
+    <Chair taken="true" name="Robin Laycock" school="John Ware School" time="2013-09-12T13:04:31.1220734-07:00" email="rglaycock@cbe.ab.ca" phone="403-777-7930" comment="" />
+    <Chair taken="true" name="Robin Laycock" school="John Ware School" time="2013-09-12T13:04:31.1220734-07:00" email="rglaycock@cbe.ab.ca" phone="403-777-7930" comment="" />
+    <Chair taken="true" name="Robin Laycock" school="John Ware School" time="2013-09-12T13:04:31.1220734-07:00" email="rglaycock@cbe.ab.ca" phone="403-777-7930" comment="" />
+    <Chair taken="true" name="Robin Laycock" school="John Ware School" time="2013-09-12T13:04:31.1220734-07:00" email="rglaycock@cbe.ab.ca" phone="403-777-7930" comment="" />
+    <Chair taken="true" name="Robin Laycock" school="John Ware School" time="2013-09-12T13:04:31.1220734-07:00" email="rglaycock@cbe.ab.ca" phone="403-777-7930" comment="" />
+    <Chair taken="true" name="Robin Laycock" school="John Ware School" time="2013-09-12T13:04:31.1220734-07:00" email="rglaycock@cbe.ab.ca" phone="403-777-7930" comment="" />
+  </Table>
+  <Table number="36" full="true">
+    <Chair taken="true" name="Jason Hartl" school="Louis Riel" time="2013-09-13T13:43:52.2806857-07:00" email="jchartl@cbe.ab.ca" phone="403-202-3909" comment="" />
+    <Chair taken="true" name="Jason Hartl" school="Louis Riel" time="2013-09-13T13:43:52.2806857-07:00" email="jchartl@cbe.ab.ca" phone="403-202-3909" comment="" />
+    <Chair taken="true" name="Jason Hartl" school="Louis Riel" time="2013-09-13T13:43:52.2806857-07:00" email="jchartl@cbe.ab.ca" phone="403-202-3909" comment="" />
+    <Chair taken="true" name="Jason Hartl" school="Louis Riel" time="2013-09-13T13:43:52.2806857-07:00" email="jchartl@cbe.ab.ca" phone="403-202-3909" comment="" />
+    <Chair taken="true" name="Jason Hartl" school="Louis Riel" time="2013-09-13T13:43:52.2806857-07:00" email="jchartl@cbe.ab.ca" phone="403-202-3909" comment="" />
+    <Chair taken="true" name="Jason Hartl" school="Louis Riel" time="2013-09-13T13:43:52.2806857-07:00" email="jchartl@cbe.ab.ca" phone="403-202-3909" comment="" />
+    <Chair taken="true" name="Jason Hartl" school="Louis Riel" time="2013-09-13T13:43:52.2806857-07:00" email="jchartl@cbe.ab.ca" phone="403-202-3909" comment="" />
+    <Chair taken="true" name="Jason Hartl" school="Louis Riel" time="2013-09-13T13:43:52.2806857-07:00" email="jchartl@cbe.ab.ca" phone="403-202-3909" comment="" />
+    <Chair taken="true" name="Jason Hartl" school="Louis Riel" time="2013-09-13T13:43:52.2806857-07:00" email="jchartl@cbe.ab.ca" phone="403-202-3909" comment="" />
+    <Chair taken="true" name="Jason Hartl" school="Louis Riel" time="2013-09-13T13:43:52.2806857-07:00" email="jchartl@cbe.ab.ca" phone="403-202-3909" comment="" />
+  </Table>
+  <Table number="37" full="false">
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+  </Table>
+  <Table number="38" full="false">
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+  </Table>
+  <Table number="39" full="false">
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+  </Table>
+  <Table number="40" full="true">
+    <Chair taken="true" name="Robin Laycock" school="John Ware School" time="2013-09-12T13:04:31.1220734-07:00" email="rglaycock@cbe.ab.ca" phone="403-777-7930" comment="" />
+    <Chair taken="true" name="Robin Laycock" school="John Ware School" time="2013-09-12T13:04:31.1220734-07:00" email="rglaycock@cbe.ab.ca" phone="403-777-7930" comment="" />
+    <Chair taken="true" name="Robin Laycock" school="John Ware School" time="2013-09-12T13:04:31.1220734-07:00" email="rglaycock@cbe.ab.ca" phone="403-777-7930" comment="" />
+    <Chair taken="true" name="Robin Laycock" school="John Ware School" time="2013-09-12T13:04:31.1220734-07:00" email="rglaycock@cbe.ab.ca" phone="403-777-7930" comment="" />
+    <Chair taken="true" name="Robin Laycock" school="John Ware School" time="2013-09-12T13:04:31.1220734-07:00" email="rglaycock@cbe.ab.ca" phone="403-777-7930" comment="" />
+    <Chair taken="true" name="Robin Laycock" school="John Ware School" time="2013-09-12T13:04:31.1220734-07:00" email="rglaycock@cbe.ab.ca" phone="403-777-7930" comment="" />
+    <Chair taken="true" name="Robin Laycock" school="John Ware School" time="2013-09-12T13:04:31.1220734-07:00" email="rglaycock@cbe.ab.ca" phone="403-777-7930" comment="" />
+    <Chair taken="true" name="Robin Laycock" school="John Ware School" time="2013-09-12T13:04:31.1220734-07:00" email="rglaycock@cbe.ab.ca" phone="403-777-7930" comment="" />
+    <Chair taken="true" name="Robin Laycock" school="John Ware School" time="2013-09-12T13:04:31.1220734-07:00" email="rglaycock@cbe.ab.ca" phone="403-777-7930" comment="" />
+    <Chair taken="true" name="Robin Laycock" school="John Ware School" time="2013-09-12T13:04:31.1220734-07:00" email="rglaycock@cbe.ab.ca" phone="403-777-7930" comment="" />
+  </Table>
+  <Table number="41" full="false">
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+  </Table>
+  <Table number="42" full="true">
+    <Chair taken="true" name="Cheryl Lyte" school="Sir John A. Macdonald" time="2013-09-13T11:27:10.6823937-07:00" email="cmlyte@cbe.ab.ca" phone="403-777-7670" comment="" />
+    <Chair taken="true" name="Cheryl Lyte" school="Sir John A. Macdonald" time="2013-09-13T11:27:10.6823937-07:00" email="cmlyte@cbe.ab.ca" phone="403-777-7670" comment="" />
+    <Chair taken="true" name="Cheryl Lyte" school="Sir John A. Macdonald" time="2013-09-13T11:27:10.6823937-07:00" email="cmlyte@cbe.ab.ca" phone="403-777-7670" comment="" />
+    <Chair taken="true" name="Cheryl Lyte" school="Sir John A. Macdonald" time="2013-09-13T11:27:10.6823937-07:00" email="cmlyte@cbe.ab.ca" phone="403-777-7670" comment="" />
+    <Chair taken="true" name="Cheryl Lyte" school="Sir John A. Macdonald" time="2013-09-13T11:27:10.6823937-07:00" email="cmlyte@cbe.ab.ca" phone="403-777-7670" comment="" />
+    <Chair taken="true" name="Cheryl Lyte" school="Sir John A. Macdonald" time="2013-09-13T11:27:10.6823937-07:00" email="cmlyte@cbe.ab.ca" phone="403-777-7670" comment="" />
+    <Chair taken="true" name="Cheryl Lyte" school="Sir John A. Macdonald" time="2013-09-13T11:27:10.6823937-07:00" email="cmlyte@cbe.ab.ca" phone="403-777-7670" comment="" />
+    <Chair taken="true" name="Cheryl Lyte" school="Sir John A. Macdonald" time="2013-09-13T11:27:10.6823937-07:00" email="cmlyte@cbe.ab.ca" phone="403-777-7670" comment="" />
+    <Chair taken="true" name="Cheryl Lyte" school="Sir John A. Macdonald" time="2013-09-13T11:27:10.6823937-07:00" email="cmlyte@cbe.ab.ca" phone="403-777-7670" comment="" />
+    <Chair taken="true" name="Cheryl Lyte" school="Sir John A. Macdonald" time="2013-09-13T11:27:10.6823937-07:00" email="cmlyte@cbe.ab.ca" phone="403-777-7670" comment="" />
+  </Table>
+  <Table number="43" full="true">
+    <Chair taken="true" name="Leta Youck-McGowan" school="Mount Royal School" time="2013-09-13T15:56:53.3326733-07:00" email="lmyouckmcgow@cbe.ab.ca" phone="403-777-7980" comment="" />
+    <Chair taken="true" name="Leta Youck-McGowan" school="Mount Royal School" time="2013-09-13T15:56:53.3326733-07:00" email="lmyouckmcgow@cbe.ab.ca" phone="403-777-7980" comment="" />
+    <Chair taken="true" name="Leta Youck-McGowan" school="Mount Royal School" time="2013-09-13T15:56:53.3326733-07:00" email="lmyouckmcgow@cbe.ab.ca" phone="403-777-7980" comment="" />
+    <Chair taken="true" name="Leta Youck-McGowan" school="Mount Royal School" time="2013-09-13T15:56:53.3326733-07:00" email="lmyouckmcgow@cbe.ab.ca" phone="403-777-7980" comment="" />
+    <Chair taken="true" name="Leta Youck-McGowan" school="Mount Royal School" time="2013-09-13T15:56:53.3326733-07:00" email="lmyouckmcgow@cbe.ab.ca" phone="403-777-7980" comment="" />
+    <Chair taken="true" name="Leta Youck-McGowan" school="Mount Royal School" time="2013-09-13T15:56:53.3326733-07:00" email="lmyouckmcgow@cbe.ab.ca" phone="403-777-7980" comment="" />
+    <Chair taken="true" name="Leta Youck-McGowan" school="Mount Royal School" time="2013-09-13T15:56:53.3326733-07:00" email="lmyouckmcgow@cbe.ab.ca" phone="403-777-7980" comment="" />
+    <Chair taken="true" name="Leta Youck-McGowan" school="Mount Royal School" time="2013-09-13T15:56:53.3326733-07:00" email="lmyouckmcgow@cbe.ab.ca" phone="403-777-7980" comment="" />
+    <Chair taken="true" name="Leta Youck-McGowan" school="Mount Royal School" time="2013-09-13T15:56:53.3326733-07:00" email="lmyouckmcgow@cbe.ab.ca" phone="403-777-7980" comment="" />
+    <Chair taken="true" name="Leta Youck-McGowan" school="Mount Royal School" time="2013-09-13T15:56:53.3326733-07:00" email="lmyouckmcgow@cbe.ab.ca" phone="403-777-7980" comment="" />
+  </Table>
+  <Table number="44" full="false">
+    <Chair taken="true" name="Martin Poirier" school="Georges P. Vanier" time="2013-09-13T08:05:59.4828837-07:00" email="mapoirier@cbe.ab.ca" phone="403-777-7460" comment="" />
+    <Chair taken="true" name="Martin Poirier" school="Georges P. Vanier" time="2013-09-13T08:05:59.4828837-07:00" email="mapoirier@cbe.ab.ca" phone="403-777-7460" comment="" />
+    <Chair taken="true" name="Martin Poirier" school="Georges P. Vanier" time="2013-09-13T08:05:59.4828837-07:00" email="mapoirier@cbe.ab.ca" phone="403-777-7460" comment="" />
+    <Chair taken="true" name="Martin Poirier" school="Georges P. Vanier" time="2013-09-13T08:05:59.4828837-07:00" email="mapoirier@cbe.ab.ca" phone="403-777-7460" comment="" />
+    <Chair taken="true" name="Martin Poirier" school="Georges P. Vanier" time="2013-09-13T08:05:59.4828837-07:00" email="mapoirier@cbe.ab.ca" phone="403-777-7460" comment="" />
+    <Chair taken="true" name="Martin Poirier" school="Georges P. Vanier" time="2013-09-13T08:05:59.4828837-07:00" email="mapoirier@cbe.ab.ca" phone="403-777-7460" comment="" />
+    <Chair taken="true" name="Leta Youck-McGowan" school="Mount Royal School" time="2013-09-13T15:56:53.3326733-07:00" email="lmyouckmcgow@cbe.ab.ca" phone="403-777-7980" comment="" />
+    <Chair taken="true" name="Leta Youck-McGowan" school="Mount Royal School" time="2013-09-13T15:56:53.3326733-07:00" email="lmyouckmcgow@cbe.ab.ca" phone="403-777-7980" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+  </Table>
+  <Table number="45" full="true">
+    <Chair taken="true" name="Martin Poirier" school="Georges P. Vanier" time="2013-09-13T08:05:59.4828837-07:00" email="mapoirier@cbe.ab.ca" phone="403-777-7460" comment="" />
+    <Chair taken="true" name="Martin Poirier" school="Georges P. Vanier" time="2013-09-13T08:05:59.4828837-07:00" email="mapoirier@cbe.ab.ca" phone="403-777-7460" comment="" />
+    <Chair taken="true" name="Martin Poirier" school="Georges P. Vanier" time="2013-09-13T08:05:59.4828837-07:00" email="mapoirier@cbe.ab.ca" phone="403-777-7460" comment="" />
+    <Chair taken="true" name="Martin Poirier" school="Georges P. Vanier" time="2013-09-13T08:05:59.4828837-07:00" email="mapoirier@cbe.ab.ca" phone="403-777-7460" comment="" />
+    <Chair taken="true" name="Martin Poirier" school="Georges P. Vanier" time="2013-09-13T08:05:59.4828837-07:00" email="mapoirier@cbe.ab.ca" phone="403-777-7460" comment="" />
+    <Chair taken="true" name="Martin Poirier" school="Georges P. Vanier" time="2013-09-13T08:05:59.4828837-07:00" email="mapoirier@cbe.ab.ca" phone="403-777-7460" comment="" />
+    <Chair taken="true" name="Martin Poirier" school="Georges P. Vanier" time="2013-09-13T08:05:59.4828837-07:00" email="mapoirier@cbe.ab.ca" phone="403-777-7460" comment="" />
+    <Chair taken="true" name="Martin Poirier" school="Georges P. Vanier" time="2013-09-13T08:05:59.4828837-07:00" email="mapoirier@cbe.ab.ca" phone="403-777-7460" comment="" />
+    <Chair taken="true" name="Martin Poirier" school="Georges P. Vanier" time="2013-09-13T08:05:59.4828837-07:00" email="mapoirier@cbe.ab.ca" phone="403-777-7460" comment="" />
+    <Chair taken="true" name="Martin Poirier" school="Georges P. Vanier" time="2013-09-13T08:05:59.4828837-07:00" email="mapoirier@cbe.ab.ca" phone="403-777-7460" comment="" />
+  </Table>
+  <Table number="46" full="false">
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+  </Table>
+  <Table number="47" full="true">
+    <Chair taken="true" name="Cheryl Lyte" school="Sir John A. Macdonald" time="2013-09-13T11:27:10.6823937-07:00" email="cmlyte@cbe.ab.ca" phone="403-777-7670" comment="" />
+    <Chair taken="true" name="Cheryl Lyte" school="Sir John A. Macdonald" time="2013-09-13T11:27:10.6823937-07:00" email="cmlyte@cbe.ab.ca" phone="403-777-7670" comment="" />
+    <Chair taken="true" name="Cheryl Lyte" school="Sir John A. Macdonald" time="2013-09-13T11:27:10.6823937-07:00" email="cmlyte@cbe.ab.ca" phone="403-777-7670" comment="" />
+    <Chair taken="true" name="Cheryl Lyte" school="Sir John A. Macdonald" time="2013-09-13T11:27:10.6823937-07:00" email="cmlyte@cbe.ab.ca" phone="403-777-7670" comment="" />
+    <Chair taken="true" name="Cheryl Lyte" school="Sir John A. Macdonald" time="2013-09-13T11:27:10.6823937-07:00" email="cmlyte@cbe.ab.ca" phone="403-777-7670" comment="" />
+    <Chair taken="true" name="Cheryl Lyte" school="Sir John A. Macdonald" time="2013-09-13T11:27:10.6823937-07:00" email="cmlyte@cbe.ab.ca" phone="403-777-7670" comment="" />
+    <Chair taken="true" name="Cheryl Lyte" school="Sir John A. Macdonald" time="2013-09-13T11:27:10.6823937-07:00" email="cmlyte@cbe.ab.ca" phone="403-777-7670" comment="" />
+    <Chair taken="true" name="Cheryl Lyte" school="Sir John A. Macdonald" time="2013-09-13T11:27:10.6823937-07:00" email="cmlyte@cbe.ab.ca" phone="403-777-7670" comment="" />
+    <Chair taken="true" name="Cheryl Lyte" school="Sir John A. Macdonald" time="2013-09-13T11:27:10.6823937-07:00" email="cmlyte@cbe.ab.ca" phone="403-777-7670" comment="" />
+    <Chair taken="true" name="Cheryl Lyte" school="Sir John A. Macdonald" time="2013-09-13T11:27:10.6823937-07:00" email="cmlyte@cbe.ab.ca" phone="403-777-7670" comment="" />
+  </Table>
+  <Table number="48" full="false">
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+  </Table>
+  <Table number="49" full="false">
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+  </Table>
+  <Table number="50" full="false">
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+  </Table>
+  <Table number="51" full="false">
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+  </Table>
+  <Table number="52" full="true">
+    <Chair taken="true" name="Cheryl Lyte" school="Sir John A. Macdonald" time="2013-09-13T11:27:10.6823937-07:00" email="cmlyte@cbe.ab.ca" phone="403-777-7670" comment="" />
+    <Chair taken="true" name="Cheryl Lyte" school="Sir John A. Macdonald" time="2013-09-13T11:27:10.6823937-07:00" email="cmlyte@cbe.ab.ca" phone="403-777-7670" comment="" />
+    <Chair taken="true" name="Cheryl Lyte" school="Sir John A. Macdonald" time="2013-09-13T11:27:10.6823937-07:00" email="cmlyte@cbe.ab.ca" phone="403-777-7670" comment="" />
+    <Chair taken="true" name="Cheryl Lyte" school="Sir John A. Macdonald" time="2013-09-13T11:27:10.6823937-07:00" email="cmlyte@cbe.ab.ca" phone="403-777-7670" comment="" />
+    <Chair taken="true" name="Cheryl Lyte" school="Sir John A. Macdonald" time="2013-09-13T11:27:10.6823937-07:00" email="cmlyte@cbe.ab.ca" phone="403-777-7670" comment="" />
+    <Chair taken="true" name="Cheryl Lyte" school="Sir John A. Macdonald" time="2013-09-13T11:27:10.6823937-07:00" email="cmlyte@cbe.ab.ca" phone="403-777-7670" comment="" />
+    <Chair taken="true" name="Cheryl Lyte" school="Sir John A. Macdonald" time="2013-09-13T11:27:10.6823937-07:00" email="cmlyte@cbe.ab.ca" phone="403-777-7670" comment="" />
+    <Chair taken="true" name="Cheryl Lyte" school="Sir John A. Macdonald" time="2013-09-13T11:27:10.6823937-07:00" email="cmlyte@cbe.ab.ca" phone="403-777-7670" comment="" />
+    <Chair taken="true" name="Cheryl Lyte" school="Sir John A. Macdonald" time="2013-09-13T11:27:10.6823937-07:00" email="cmlyte@cbe.ab.ca" phone="403-777-7670" comment="" />
+    <Chair taken="true" name="Cheryl Lyte" school="Sir John A. Macdonald" time="2013-09-13T11:27:10.6823937-07:00" email="cmlyte@cbe.ab.ca" phone="403-777-7670" comment="" />
+  </Table>
+  <Table number="53" full="false">
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+  </Table>
+  <Table number="54" full="false">
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+  </Table>
+  <Table number="55" full="false">
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+  </Table>
+  <Table number="56" full="false">
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+  </Table>
+  <Table number="57" full="false">
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+  </Table>
+  <Table number="58" full="false">
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+  </Table>
+  <Table number="59" full="false">
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+  </Table>
+  <Table number="60" full="false">
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+    <Chair taken="false" name="" school="" time="0001-01-01T00:00:00" email="" phone="" comment="" />
+  </Table>
+</Event>

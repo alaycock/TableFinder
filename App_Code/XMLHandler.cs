@@ -1,0 +1,165 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Xml.Linq;
+using System.Xml;
+using System.Data;
+using System.Web.UI;
+
+public class Table
+{
+    public List<Chair> chairs;
+    public bool full { get; set; }
+    public int number;
+}
+
+public class Chair
+{
+    public string email;
+    public bool taken;
+    public string name;
+    public string school;
+    public string phone;
+    public DateTime time;
+    public string comment;
+}
+
+public class XMLHandler
+{
+    public string filename;
+    //Constructor
+    public XMLHandler(string file)
+    {
+        filename = file;
+    }
+
+    // Load the XML file with the chair/table information into the code
+    public List<Table> Load_XML()
+    {
+        if (filename == null)
+            throw new Exception("No file associated with XML handler, nothing to load");
+        List<Table> returnTable = new List<Table>();
+        XDocument xdoc = XDocument.Load(filename);
+
+        //Create information about each table
+        foreach (XElement tableElement in xdoc.Root.Elements("Table"))
+        {
+            Table insertTable = new Table();
+            insertTable.number = Convert.ToInt32(tableElement.Attribute("number").Value);
+
+            if (tableElement.Attribute("full").Value.Equals("false"))
+                insertTable.full = false;
+            else
+                insertTable.full = true;
+
+            insertTable.chairs = new List<Chair>();
+            //Insert all the chairs into the table
+            foreach (XElement chairElement in tableElement.Elements("Chair"))
+            {
+                Chair insertChair = new Chair();
+
+                if (chairElement.Attribute("taken").Value.Equals("false"))
+                    insertChair.taken = false;
+                else
+                    insertChair.taken = true;
+
+                insertChair.email = chairElement.Attribute("email").Value;
+                insertChair.name = chairElement.Attribute("name").Value;
+                insertChair.email = chairElement.Attribute("email").Value;
+                insertChair.school = chairElement.Attribute("school").Value;
+                insertChair.phone = chairElement.Attribute("phone").Value;
+                insertChair.comment = chairElement.Attribute("comment").Value;
+
+                try
+                {
+                    insertChair.time = DateTime.Parse(chairElement.Attribute("time").Value);
+                }
+                catch (Exception e)
+                {
+                    insertChair.time = DateTime.MinValue;
+                }
+                    
+
+                insertTable.chairs.Add(insertChair);
+            }
+            returnTable.Add(insertTable);
+        }
+        return returnTable;
+    }
+
+    //Moves everything from the cart to the actual list to prep for XML write
+
+
+    public void writeTablelistToXML(List<Table> writeToXMLData)
+    {
+        if (filename == null)
+            throw new Exception("No file associated with XML handler, no location to write to");
+
+        XmlWriterSettings settings = new XmlWriterSettings();
+        settings.Indent = true;
+        settings.NewLineChars = "\n";
+
+        using (XmlWriter writeFile = XmlWriter.Create(filename, settings))
+        {
+            
+            writeFile.WriteStartDocument();
+            writeFile.WriteStartElement("Event"); // Write root
+
+            for (int i = 0; i < writeToXMLData.Count; i++)
+            {
+                //Write table element
+                writeFile.WriteStartElement("Table");
+
+                writeFile.WriteStartAttribute("number");
+                writeFile.WriteValue(writeToXMLData[i].number);
+                writeFile.WriteEndAttribute();
+
+
+                writeFile.WriteStartAttribute("full");
+                writeFile.WriteValue(writeToXMLData[i].full);
+                writeFile.WriteEndAttribute();
+
+                for (int j = 0; j < writeToXMLData[i].chairs.Count; j++)
+                {
+                    //Write chair element
+                    writeFile.WriteStartElement("Chair");
+
+                    writeFile.WriteStartAttribute("taken");
+                    writeFile.WriteValue(writeToXMLData[i].chairs[j].taken);
+                    writeFile.WriteEndAttribute();
+
+                    writeFile.WriteStartAttribute("name");
+                    writeFile.WriteValue(writeToXMLData[i].chairs[j].name);
+                    writeFile.WriteEndAttribute();
+
+                    writeFile.WriteStartAttribute("school");
+                    writeFile.WriteValue(writeToXMLData[i].chairs[j].school);
+                    writeFile.WriteEndAttribute();
+
+                    writeFile.WriteStartAttribute("time");
+                    writeFile.WriteValue(writeToXMLData[i].chairs[j].time);
+                    writeFile.WriteEndAttribute();
+
+                    writeFile.WriteStartAttribute("email");
+                    writeFile.WriteValue(writeToXMLData[i].chairs[j].email);
+                    writeFile.WriteEndAttribute();
+
+                    writeFile.WriteStartAttribute("phone");
+                    writeFile.WriteValue(writeToXMLData[i].chairs[j].phone);
+                    writeFile.WriteEndAttribute();
+
+                    writeFile.WriteStartAttribute("comment");
+                    writeFile.WriteValue(writeToXMLData[i].chairs[j].comment);
+                    writeFile.WriteEndAttribute();
+
+                    writeFile.WriteEndElement();
+                }
+
+                writeFile.WriteEndElement();
+            }
+
+            writeFile.WriteEndElement(); // End root write
+            writeFile.WriteEndDocument(); //End document write
+        }
+    }
+}
