@@ -6,24 +6,6 @@ using System.Xml;
 using System.Data;
 using System.Web.UI;
 
-public class Table
-{
-    public List<Chair> chairs;
-    public bool full { get; set; }
-    public int number;
-}
-
-public class Chair
-{
-    public string email;
-    public bool taken;
-    public string name;
-    public string school;
-    public string phone;
-    public DateTime time;
-    public string comment;
-}
-
 public class XMLHandler
 {
     public string filename;

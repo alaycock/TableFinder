@@ -10,7 +10,6 @@ using System.Windows.Forms;
 public partial class _Default : System.Web.UI.Page
 {
     // Variables and structures\
-    private const string XMLFileLocation = "App_data/XMLFile.xml";
     protected string errorMessage = "";
     protected List<Table> tableList;
     private XMLHandler XMLFile;
@@ -27,7 +26,9 @@ public partial class _Default : System.Web.UI.Page
     // Driver method
     protected void Page_Load(object sender, EventArgs e)
     {
-        XMLFile = new XMLHandler(Server.MapPath(XMLFileLocation));
+        Database db = new Database();
+        tableList = db.getTables();
+
         if (Session.IsNewSession == true || (bool)Session["AdminLoggedIn"] == false)
         {
             Session["AdminLoggedIn"] = false;
@@ -36,7 +37,7 @@ public partial class _Default : System.Web.UI.Page
 
         try
         {
-            tableList = XMLFile.Load_XML();
+            tableList = db.getTables();
         }
         catch (Exception ex)
         {

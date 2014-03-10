@@ -13,21 +13,16 @@ using System.ComponentModel;
 
 public partial class _Default : System.Web.UI.Page
 {
-    // Variables and structures
-    protected const int seatPrice = 45;
-    private const string XMLFileLocation = "App_data/XMLFile.xml";
 
     protected string errorMessage = "";
 
-    protected List<Table> tableList;
-    private XMLHandler XMLFile;
-    protected List<Pair> cartList = new List<Pair>();
+    protected List<Table> tables;
+    protected List<Pair> cartItems = new List<Pair>();
     protected DataView cartView = new DataView();
 
     // Driver method
     protected void Page_Load(object sender, EventArgs e)
     {
-        XMLFile = new XMLHandler(Server.MapPath(XMLFileLocation));
 
         if (Session.IsNewSession == true || Session["LoggedIn"] == null)
         {
@@ -37,7 +32,8 @@ public partial class _Default : System.Web.UI.Page
 
         try
         {
-            tableList = XMLFile.Load_XML();
+            Database db = new Database();
+            tables = db.getTables();
         }
         catch (Exception ex)
         {
@@ -64,7 +60,7 @@ public partial class _Default : System.Web.UI.Page
         else
         {
             errorMessage = ViewState["errormsg"] as String;
-            cartList = ViewState["cartlist"] as List<Pair>;
+            cartItems = ViewState["cartItems"] as List<Pair>;
 
             cartView = new DataView(remakeCartDataTable());
             ShoppingCart.DataSource = cartView;
@@ -84,13 +80,13 @@ public partial class _Default : System.Web.UI.Page
         tablesDataTable.Columns.Add(new DataColumn("Text", typeof(String)));
         tablesDataTable.Columns.Add(new DataColumn("Value", typeof(int)));
 
-        for (int i = 0; i < tableList.Count; i++)
+        for (int i = 0; i < tables.Count; i++)
         {
-            if (tableList[i].full == false)
+            if (!tables[i].isFull())
             {
                 DataRow dr = tablesDataTable.NewRow();
-                dr[0] = tableList[i].number;
-                dr[1] = tableList[i].number;
+                dr[0] = tables[i].tableNumber;
+                dr[1] = tables[i].tableNumber;
                 tablesDataTable.Rows.Add(dr);
             }
         }
@@ -106,15 +102,15 @@ public partial class _Default : System.Web.UI.Page
         ShoppingCart.DataSource = cartView;
         ShoppingCart.DataBind();
 
-        ViewState["cartlist"] = cartList;
+        ViewState["cartItems"] = cartItems;
     }
 
     // For when the button is clicked to add a table/chair combo to the cart
     protected void button_addToCart(object sender, EventArgs e)
     {
-        for (int index = 0; index < cartList.Count; index++)
+        for (int index = 0; index < cartItems.Count; index++)
         {
-            if ((int)cartList[index].First == Convert.ToInt32(tableNum.SelectedItem.Text))
+            if ((int)cartItems[index].First == Convert.ToInt32(tableNum.SelectedItem.Text))
             {
                 errorMessage = "This table has already been selected. If you wish to add more people, " +
                     "please remove it from your cart, and add it with the total number of people you want " +
@@ -137,9 +133,9 @@ public partial class _Default : System.Web.UI.Page
         ShoppingCart.DataSource = cartView;
         ShoppingCart.DataBind();
 
-        cartList.Add(new Pair(Convert.ToInt32(tableNum.SelectedItem.Text),Convert.ToInt32(chairNum.SelectedItem.Text)));
+        cartItems.Add(new Pair(Convert.ToInt32(tableNum.SelectedItem.Text),Convert.ToInt32(chairNum.SelectedItem.Text)));
 
-        ViewState["cartlist"] = cartList;
+        ViewState["cartItems"] = cartItems;
 
     }
 
@@ -150,7 +146,7 @@ public partial class _Default : System.Web.UI.Page
         cartTable.Columns.Add("Number of Chairs", typeof(string));
 
         DataRow row;
-        foreach (Pair cartItem in cartList)
+        foreach (Pair cartItem in cartItems)
         {
             row = cartTable.NewRow();
             row[0] = cartItem.First;
@@ -186,19 +182,12 @@ public partial class _Default : System.Web.UI.Page
             
         }
 
-
-
-       
-
-        for (int i = 0; i < tableList[Convert.ToInt32(tableNum.SelectedValue) - 1].chairs.Count; i++)
+        for (int i = 0; i < tables[Convert.ToInt32(tableNum.SelectedValue) - 1].chairs.Count; i++)
         {
-            if (!tableList[Convert.ToInt32(tableNum.SelectedValue) - 1].chairs[i].taken)
-            {
-                DataRow dr = chairListDataTable.NewRow();
-                dr[0] = freeCounter++ + 1;
-                dr[1] = i;
-                chairListDataTable.Rows.Add(dr);
-            }
+            DataRow dr = chairListDataTable.NewRow();
+            dr[0] = freeCounter++ + 1;
+            dr[1] = i;
+            chairListDataTable.Rows.Add(dr);
         }
 
         chairNum.DataSource = new DataView(chairListDataTable);
@@ -210,7 +199,7 @@ public partial class _Default : System.Web.UI.Page
     private string generateHTMLTableForCart()
     {
         string htmlCart = "<table><tr><th>Table</th><th>Number of Chairs</th></tr>\n";
-        foreach (Pair row in cartList)
+        foreach (Pair row in cartItems)
             if (row.First != null && row.Second != null)
                 htmlCart += "<tr><td>" + row.First + "</td><td>" + row.Second + "</td></tr>\n";
 
@@ -221,11 +210,11 @@ public partial class _Default : System.Web.UI.Page
     //Currently only used for deleting items, but can be extended to also edit the list of necessary
     protected void ShoppingCart_ItemCommand(object sender, DataGridCommandEventArgs e)
     {
-        for (int index=0; index < cartList.Count; index++)
+        for (int index=0; index < cartItems.Count; index++)
         {   
-            if ((int)cartList[index].First == Convert.ToInt32(e.Item.Cells[0].Text))
+            if ((int)cartItems[index].First == Convert.ToInt32(e.Item.Cells[0].Text))
             {
-                cartList.RemoveAt(index);
+                cartItems.RemoveAt(index);
                 break;
             }
         }
@@ -235,12 +224,12 @@ public partial class _Default : System.Web.UI.Page
         ShoppingCart.DataSource = cartView;
         ShoppingCart.DataBind();
 
-        ViewState["cartlist"] = cartList;
+        ViewState["cartItems"] = cartItems;
     }
 
     protected void button_submitOrder(object sender, EventArgs e)
     {
-        if (cartList.Count == 0)
+        if (cartItems.Count == 0)
         {
             errorMessage = "Cart is empty, please select at least one seat.";
             return;
@@ -251,8 +240,8 @@ public partial class _Default : System.Web.UI.Page
         try
         {
             sendEmail(labelEmail.Text);
-            tableList = prepWrite(tableList);
-            XMLFile.writeTablelistToXML(tableList);
+            tables = prepWrite(tables);
+            XMLFile.writetablesToXML(tables);
         }
         catch (Exception ex)
         {
@@ -267,9 +256,9 @@ public partial class _Default : System.Web.UI.Page
     private void sendEmail(string emailAddress)
     {
         int cost = 0;
-        for (int i = 0; i < cartList.Count; i++)
+        for (int i = 0; i < cartItems.Count; i++)
         {
-            cost += (int)cartList[i].Second * seatPrice;
+            cost += (int)cartItems[i].Second * Config.SEAT_PRICE;
         }
 
         MailMessage outgoingMessage = new MailMessage();
@@ -281,8 +270,8 @@ public partial class _Default : System.Web.UI.Page
         string body = "Hello " + labelName.Text + " (" + labelSchool.Text + ")\n";
         body += "The following seats have been saved for you:\n";
 
-        for (int i = 0; i < cartList.Count; i++)
-            body += "Table #" + cartList[i].First + " for " + cartList[i].Second + " seats\n";
+        for (int i = 0; i < cartItems.Count; i++)
+            body += "Table #" + cartItems[i].First + " for " + cartItems[i].Second + " seats\n";
 
         body += "\nThe total cost is: $" + cost + "\n\n";
         body += "If this is not correct, please email any corrections to Robin Laycock at rglaycock@cbe.ab.ca\n";
@@ -301,30 +290,30 @@ public partial class _Default : System.Web.UI.Page
 
     protected List<Table> prepWrite(List<Table> listToFix)
     {
-        foreach (Pair cartElem in cartList)
+        foreach (Pair cartElem in cartItems)
         {
             //Find the index for the table number
-            int tableListIndex = 0;
-            for (; tableListIndex < listToFix.Count; tableListIndex++)
+            int tablesIndex = 0;
+            for (; tablesIndex < listToFix.Count; tablesIndex++)
             {
-                if ((int)cartElem.First == listToFix[tableListIndex].number)
+                if ((int)cartElem.First == listToFix[tablesIndex].tableNumber)
                     break;
             }
 
-            for (int i = 0; i < listToFix[tableListIndex].chairs.Count; i++)
+            for (int i = 0; i < listToFix[tablesIndex].chairs.Count; i++)
             {
-                if (!listToFix[tableListIndex].chairs[i].taken && (int)cartElem.Second > 0)
+                if (!listToFix[tablesIndex].chairs[i].taken && (int)cartElem.Second > 0)
                 {
                     //Because for some stupid reason, I can't edit the chair in the list, I have to remove and make a new one
                     Chair insertChair = new Chair();
 
-                    listToFix[tableListIndex].chairs[i].taken = true;
-                    listToFix[tableListIndex].chairs[i].time = DateTime.Now;
-                    listToFix[tableListIndex].chairs[i].name = labelName.Text;
-                    listToFix[tableListIndex].chairs[i].email = labelEmail.Text;
-                    listToFix[tableListIndex].chairs[i].school = labelSchool.Text;
-                    listToFix[tableListIndex].chairs[i].phone = labelPhone.Text;
-                    listToFix[tableListIndex].chairs[i].comment = comments.Text;
+                    listToFix[tablesIndex].chairs[i].taken = true;
+                    listToFix[tablesIndex].chairs[i].time = DateTime.Now;
+                    listToFix[tablesIndex].chairs[i].name = labelName.Text;
+                    listToFix[tablesIndex].chairs[i].email = labelEmail.Text;
+                    listToFix[tablesIndex].chairs[i].school = labelSchool.Text;
+                    listToFix[tablesIndex].chairs[i].phone = labelPhone.Text;
+                    listToFix[tablesIndex].chairs[i].comment = comments.Text;
 
                     cartElem.Second = (int)cartElem.Second - 1;
                 }
@@ -333,16 +322,16 @@ public partial class _Default : System.Web.UI.Page
             }
 
             bool atLeastOneFree = false;
-            for (int i = 0; i < listToFix[tableListIndex].chairs.Count; i++)
+            for (int i = 0; i < listToFix[tablesIndex].chairs.Count; i++)
             {
-                if (!listToFix[tableListIndex].chairs[i].taken)
+                if (!listToFix[tablesIndex].chairs[i].taken)
                 {
                     atLeastOneFree = true;
                     break;
                 }
             }
             if (!atLeastOneFree)
-                listToFix[tableListIndex].full = true;
+                listToFix[tablesIndex].full = true;
         }
         return listToFix;
     }
