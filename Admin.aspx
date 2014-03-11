@@ -21,7 +21,7 @@
 
     <div style="margin-top:20px">
     <b>Reset Database</b><br />This will reset the ENTIRE DATABASE, a backup will be made:<br />
-    <asp:Button ID="resetButton" runat="server" OnClientClick="return confirm('This will remove everything, are you sure?')" OnClick="resetXMLFile" Text="Submit" />
+    <asp:Button ID="resetButton" runat="server" OnClientClick="return confirm('This will remove everything, are you sure?')" OnClick="resetChairs" Text="Submit" />
     </div>
 
     <div style="margin-top:20px">
@@ -34,27 +34,22 @@
 
     <div style="margin-top:20px">
     <%
-        for(int i = 0; i < tableList.Count; i++)
+        int counter = 0;
+        foreach (TableGroup table in tableList)
         {
-            Response.Write("<div onclick=\"openClose('a" + (i + 1) + 
-                "')\" class=\"mainExpand\">Table #" + (i + 1) + "</div>\n");
-            Response.Write("<div id=\"a" + (i + 1) + "\" class=\"texter\">\n");
             Response.Write("<table>" +
-                "<tr><th>Chair</th><th>Email</th><th>Name</th><th>School</th><th>Taken</th><th>Time</th><th>Phone</th><th>Comment</th></tr>");
-            for(int j = 0; j < tableList[i].chairs.Count; j++)
+                "<tr><th>Chair</th><th>Email</th><th>Name</th><th>School</th><th>Time</th><th>Phone</th><th>Comment</th></tr>");
+            foreach(Chair chair in table.chairs)
             {
-
-                Response.Write("<tr><td>" + (j + 1) + "</td>");
-                Response.Write("<td>" + tableList[i].chairs[j].email + "</td>");
-                Response.Write("<td>" + tableList[i].chairs[j].name + "</td>");
-                Response.Write("<td>" + tableList[i].chairs[j].school + "</td>");
-                Response.Write("<td>" + tableList[i].chairs[j].taken.ToString() + "</td>");
-                Response.Write("<td>" + tableList[i].chairs[j].time.ToString() + "</td>");
-                Response.Write("<td>" + tableList[i].chairs[j].phone + "</td>");
-                Response.Write("<td>" + tableList[i].chairs[j].comment + "</td></tr>");
+                Person occupant = chair.occupant;
+                Response.Write("<tr><td>" + (++counter) + "</td>");
+                Response.Write("<td>" + occupant.email + "</td>");
+                Response.Write("<td>" + occupant.name + "</td>");
+                Response.Write("<td>" + occupant.school + "</td>");
+                Response.Write("<td>" + occupant.phone + "</td>");
+                Response.Write("<td>" + occupant.comment + "</td></tr>");
             }
             Response.Write("</table>\n");
-            Response.Write("</div>\n");
         }
          %>
     </div>

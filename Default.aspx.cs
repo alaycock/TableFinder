@@ -16,7 +16,7 @@ public partial class _Default : System.Web.UI.Page
 
     protected string errorMessage = "";
 
-    protected List<Table> tables;
+    protected List<TableGroup> tables;
     protected List<Pair> cartItems = new List<Pair>();
     protected DataView cartView = new DataView();
 
@@ -240,8 +240,11 @@ public partial class _Default : System.Web.UI.Page
         try
         {
             sendEmail(labelEmail.Text);
-            tables = prepWrite(tables);
-            XMLFile.writetablesToXML(tables);
+
+            // Redo this stuff to actually submit to the DB.
+
+            //tables = prepWrite(tables);
+            //XMLFile.writetablesToXML(tables);
         }
         catch (Exception ex)
         {
@@ -253,86 +256,45 @@ public partial class _Default : System.Web.UI.Page
         Response.Redirect("~/Confirmation.aspx");
     }
 
-    private void sendEmail(string emailAddress)
+    private int calculateCost()
     {
         int cost = 0;
         for (int i = 0; i < cartItems.Count; i++)
-        {
             cost += (int)cartItems[i].Second * Config.SEAT_PRICE;
-        }
-
-        MailMessage outgoingMessage = new MailMessage();
-        outgoingMessage.From = new MailAddress("noreply@tablefinder.info", "tablefinder"); /////////////// Change this
-        outgoingMessage.Bcc.Add("rglaycock@cbe.ab.ca");
-        outgoingMessage.To.Add(emailAddress);
-        outgoingMessage.Subject = "Table order confirmation";
-
-        string body = "Hello " + labelName.Text + " (" + labelSchool.Text + ")\n";
-        body += "The following seats have been saved for you:\n";
-
-        for (int i = 0; i < cartItems.Count; i++)
-            body += "Table #" + cartItems[i].First + " for " + cartItems[i].Second + " seats\n";
-
-        body += "\nThe total cost is: $" + cost + "\n\n";
-        body += "If this is not correct, please email any corrections to Robin Laycock at rglaycock@cbe.ab.ca\n";
-        body += "If payment is not received within one week, your order will be canceled. Make cheques out to John Ware School.\n";
-
-        outgoingMessage.Body = body;
-
-        //NetworkCredential creds = new NetworkCredential("noreply@tablefinder.info", "tqbfjotld1.");
-
-        SmtpClient server = new SmtpClient("relay-hosting.secureserver.net", 25);
-        server.EnableSsl = false;
-        server.UseDefaultCredentials = true;
-        //server.Credentials = creds;
-        server.Send(outgoingMessage); //Send email for real
+        return cost;
     }
 
-    protected List<Table> prepWrite(List<Table> listToFix)
+    private string generateSeatString()
     {
-        foreach (Pair cartElem in cartItems)
-        {
-            //Find the index for the table number
-            int tablesIndex = 0;
-            for (; tablesIndex < listToFix.Count; tablesIndex++)
-            {
-                if ((int)cartElem.First == listToFix[tablesIndex].tableNumber)
-                    break;
-            }
+        string seatString = "";
+        for (int i = 0; i < cartItems.Count; i++)
+            seatString += "Table #" + cartItems[i].First + " for " + cartItems[i].Second + " seats\n";
+        return seatString;
+    }
 
-            for (int i = 0; i < listToFix[tablesIndex].chairs.Count; i++)
-            {
-                if (!listToFix[tablesIndex].chairs[i].taken && (int)cartElem.Second > 0)
-                {
-                    //Because for some stupid reason, I can't edit the chair in the list, I have to remove and make a new one
-                    Chair insertChair = new Chair();
+    private void sendEmail(string emailAddress)
+    {
+        int cost = calculateCost();
 
-                    listToFix[tablesIndex].chairs[i].taken = true;
-                    listToFix[tablesIndex].chairs[i].time = DateTime.Now;
-                    listToFix[tablesIndex].chairs[i].name = labelName.Text;
-                    listToFix[tablesIndex].chairs[i].email = labelEmail.Text;
-                    listToFix[tablesIndex].chairs[i].school = labelSchool.Text;
-                    listToFix[tablesIndex].chairs[i].phone = labelPhone.Text;
-                    listToFix[tablesIndex].chairs[i].comment = comments.Text;
+        MailMessage outgoingMessage = new MailMessage();
+        outgoingMessage.From = new MailAddress(Config.SMTP_FROM_EMAIL, Config.SMTP_FROM_NAME);
+        outgoingMessage.Bcc.Add(Config.SMTP_CONFIRM_EMAIL);
+        outgoingMessage.To.Add(emailAddress);
+        outgoingMessage.Subject = Config.SMTP_CONFIRM_SUBJECT;
 
-                    cartElem.Second = (int)cartElem.Second - 1;
-                }
-                if ((int)cartElem.Second == 0)
-                    break;
-            }
+        string seatString = generateSeatString();
 
-            bool atLeastOneFree = false;
-            for (int i = 0; i < listToFix[tablesIndex].chairs.Count; i++)
-            {
-                if (!listToFix[tablesIndex].chairs[i].taken)
-                {
-                    atLeastOneFree = true;
-                    break;
-                }
-            }
-            if (!atLeastOneFree)
-                listToFix[tablesIndex].full = true;
-        }
-        return listToFix;
+        outgoingMessage.Body = String.Format(Config.SMTP_CONFIRM_BODY,
+            labelName.Text,
+            labelSchool.Text,
+            seatString,
+            cost,
+            Config.SMTP_CONFIRM_NAME,
+            Config.SMTP_CONFIRM_EMAIL);
+
+        SmtpClient server = new SmtpClient(Config.SMTP_SERVER, Config.SMTP_PORT);
+        server.EnableSsl = false;
+        server.UseDefaultCredentials = true;
+        server.Send(outgoingMessage);
     }
 }

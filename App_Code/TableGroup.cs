@@ -6,12 +6,12 @@ using System.Web;
 /// <summary>
 /// Summary description for Table
 /// </summary>
-public class Table
+public class TableGroup
 {
     public List<Chair> chairs;
     public int tableNumber;
 
-	public Table(int tableNumber)
+    public TableGroup(int tableNumber)
 	{
         this.chairs = new List<Chair>();
         this.tableNumber = tableNumber;
@@ -30,6 +30,11 @@ public class Table
         return chairs.Count;
     }
 
+    public int seatsAvailable()
+    {
+        return Config.SEATS_PER_TABLE - seatsTaken();
+    }
+
     public bool isFull()
     {
         return chairs.Count == Config.SEATS_PER_TABLE;
@@ -39,14 +44,14 @@ public class Table
     {
         if (obj == null)
             return false;
-        Table objAsTable = obj as Table;
+        TableGroup objAsTable = obj as TableGroup;
         if (objAsTable == null)
             return false;
         else
             return Equals(objAsTable);
     }
 
-    public bool Equals(Table other)
+    public bool Equals(TableGroup other)
     {
         if (other == null)
             return false;

@@ -14,7 +14,6 @@ public class Database
 
 	public Database()
 	{
-
         string connectionString = String.Format(
             "server={0};user id={1};password={2};persistsecurityinfo=True;database={3};port={4}",
             Config.DBSERVER, Config.DBUSER, Config.DBPASSWORD, Config.DBSCHEMA, Config.DBPORT
@@ -47,6 +46,12 @@ public class Database
         {
             return false;
         }
+    }
+
+    public void resetChairs()
+    {
+        string query = "DELETE FROM chairs";
+        executeNonReadingQuery(query, new List<MySqlParameter>());
     }
 
     public bool authenticate(string emailInput, string passwordInput)
@@ -101,9 +106,9 @@ public class Database
         }
     }
 
-    public List<Table> getTables()
+    public List<TableGroup> getTables()
     {
-        List<Table> tables = new List<Table>();
+        List<TableGroup> tables = new List<TableGroup>();
 
         string query = "SELECT tableNumber, name, email, school, phone, comment FROM chairs LEFT JOIN users ON chairs.userID=users.userID";
 
@@ -124,14 +129,14 @@ public class Database
 
                 int tableNumber = reader.GetInt32("tableNumber");
 
-                if (tables.Contains(new Table(tableNumber)))
+                if (tables.Contains(new TableGroup(tableNumber)))
                 {
-                    Table existing = tables.Find(x => x.tableNumber.Equals(tableNumber));
+                    TableGroup existing = tables.Find(x => x.tableNumber.Equals(tableNumber));
                     existing.addSeat(chair);
                 }
                 else
                 {
-                    Table newTable = new Table(tableNumber);
+                    TableGroup newTable = new TableGroup(tableNumber);
                     newTable.addSeat(chair);
                     tables.Add(newTable);
                 }

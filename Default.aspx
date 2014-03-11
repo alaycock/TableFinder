@@ -20,16 +20,9 @@
     </p>
     <p>There are <% 
                      int available = 0;
-                     for (int i = 0; i < 45; i++) // Magic 45 is the number of tables total
-                     {
-                         for (int z = 0; z < 10; z++) // Magic 10 is the number of chairs at each table
-                         {
-                             if (!tables[i].chairs[z].taken)
-                             {
-                                 available++;
-                             }
-                         }
-                     }
+                     foreach( TableGroup table in tables )
+                         available += table.seatsAvailable();
+                         
                      Response.Write(available);
                      %> seats remaining.</p>
     <p>
@@ -90,17 +83,8 @@
                 string tableColorLocation;
                 try
                 {
-                    bool freeSeat = false;
-                    for (int i = 0; i < 10; i++) // magic 10 is the number of chairs, I'm a rush, so not doing this right
-                    {
-                        if (!tables[(rowI * columns) + colI].chairs[i].taken)
-                        {
-                            freeSeat = true;
-                            break;
-                        }
-                    }
-                    
-                    if (!freeSeat)
+
+                    if (tables[(rowI * columns) + colI].isFull())
                         tableColorLocation = "images/redCircle.png";
                     else
                         tableColorLocation = "images/blueCircle.png";
