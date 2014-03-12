@@ -10,7 +10,6 @@ public class Chair
 {
 
     public Person occupant;
-    public bool isTaken;
 
 	public Chair(Person occupant)
 	{

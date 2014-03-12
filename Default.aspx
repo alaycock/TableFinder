@@ -44,9 +44,9 @@
             <tr><td>Total cost:</td><td>
             <%
                 int cost = 0;
-                for (int i = 0; i < cartList.Count; i++)
+                for (int i = 0; i < cartItems.Count; i++)
                 {
-                    cost += (int)cartList[i].Second * seatPrice;
+                    cost += (int)cartItems[i].Second * Config.SEAT_PRICE;
                 }
                 Session["totalCost"] = cost;
                 Response.Write("$" + cost);
@@ -97,7 +97,7 @@
                 Response.Write("<div style=\"width:85px; height:85px; position:relative; float:left;text-align: center;\">\n");
                 Response.Write("<img src=\"" + tableColorLocation +
                     "\" style=\"left:24px; top:24px; position:absolute;\" width=37 height=37>\n");
-                Response.Write("<p style=\"position: relative; margin-left:auto; margin-right:auto; margin-top:32px;\">" + tables[(rowI * columns) + colI].number.ToString() + "</p>\n");
+                Response.Write("<p style=\"position: relative; margin-left:auto; margin-right:auto; margin-top:32px;\">" + ((rowI * columns) + colI + 1) + "</p>\n");
 
                 for (int chairI = 0; chairI < tables[(rowI * columns) + colI].chairs.Count; chairI++)
                 {
@@ -110,16 +110,16 @@
                     leftLoc = (int)width - 8 + 42; // -8 for the offset of the size of the chair image, + 42 to correctly place it in around the table
                     topLoc = (int)height - 8 + 42; 
                     
-                    if (tables[(rowI * columns) + colI].chairs[chairI].taken)
-                    {
-                        Response.Write("<img style=\"left:" + leftLoc + "px; top:" + topLoc +
-                            "px; position:absolute; width=16 height=16\" src=\"images/redCircle.png\" width=16 height=16>\n");
-                    }
+                    Response.Write("<img style=\"left:" + leftLoc + "px; top:" + topLoc +
+                        "px; position:absolute; width=16 height=16\" src=\"images/redCircle.png\" width=16 height=16>\n");
+                    
+                /*
                     else
                     {
                         Response.Write("<img style=\"left:" + leftLoc + "px; top:" + topLoc +
                             "px; position:absolute; width=16 height=16\" src=\"images/blueCircle.png\" width=16 height=16>\n");
                     }
+                 */
                 }
                 Response.Write("</div>");
             }
@@ -147,7 +147,7 @@
                     bool freeSeat = false;
                     for (int i = 0; i < 10; i++) // magic 10 is the number of chairs, I'm a rush, so not doing this right
                     {
-                        if (!tables[(rowI * columns) + colI + startPosition].chairs[i].taken)
+                        if (!tables[(rowI * columns) + colI + startPosition].isFull())
                         {
                             freeSeat = true;
                             break;
@@ -167,7 +167,7 @@
                 Response.Write("<div style=\"width:85px; height:85px; position:relative; float:left;text-align: center;\">\n");
                 Response.Write("<img src=\"" + tableColorLocation +
                     "\" style=\"left:24px; top:24px; position:absolute;\" width=37 height=37>\n");
-                Response.Write("<p style=\"position: relative; margin-left:auto; margin-right:auto; margin-top:32px;\">" + tables[(rowI * columns) + colI + startPosition].number.ToString() + "</p>\n");
+                Response.Write("<p style=\"position: relative; margin-left:auto; margin-right:auto; margin-top:32px;\">" + ((rowI * columns) + colI + startPosition + 1) + "</p>\n");
 
                 System.Diagnostics.Debug.WriteLine(startPosition + " " + tables[(rowI * columns) + colI + startPosition].chairs.Count + "\n");
                 for (int chairI = 0; chairI < tables[(rowI * columns) + colI + startPosition].chairs.Count; chairI++)
@@ -181,16 +181,15 @@
                     leftLoc = (int)width - 8 + 42; // -8 for the offset of the size of the chair image, + 42 to correctly place it in around the table
                     topLoc = (int)height - 8 + 42; 
                     
-                    if (tables[(rowI * columns) + colI + startPosition].chairs[chairI].taken)
-                    {
-                        Response.Write("<img style=\"left:" + leftLoc + "px; top:" + topLoc +
-                            "px; position:absolute; width=16 height=16\" src=\"images/redCircle.png\" width=16 height=16>\n");
-                    }
+                    Response.Write("<img style=\"left:" + leftLoc + "px; top:" + topLoc +
+                        "px; position:absolute; width=16 height=16\" src=\"images/redCircle.png\" width=16 height=16>\n");
+                        /*
                     else
                     {
                         Response.Write("<img style=\"left:" + leftLoc + "px; top:" + topLoc +
                             "px; position:absolute; width=16 height=16\" src=\"images/blueCircle.png\" width=16 height=16>\n");
                     }
+                         * */
                 }
                 Response.Write("</div>");
             }
