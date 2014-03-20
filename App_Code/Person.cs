@@ -44,8 +44,8 @@ public class Person
         return (this.email.Equals(other.email));
     }
 
-    public override string GetHashCode()
+    public override int GetHashCode()
     {
-        return this.email;
+        return this.email.GetHashCode();
     }
 }

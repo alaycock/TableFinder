@@ -7,16 +7,16 @@ using System.Web.UI.WebControls;
 
 public partial class _Default : System.Web.UI.Page
 {
-    private XMLHandler XMLFile;
-    private const string XMLFileLocation = "App_data/XMLFile.xml";
+    private Database db;
     protected string errorMessage = "";
-    protected List<Table> tableList;
+    protected List<TableGroup> tableList;
 
 
     // Driver method
     protected void Page_Load(object sender, EventArgs e)
     {
-        XMLFile = new XMLHandler(Server.MapPath(XMLFileLocation));
+        db = new Database();
+        
         if (Session.IsNewSession == true || (bool)Session["AdminLoggedIn"] == false)
         {
             Session["AdminLoggedIn"] = false;
@@ -25,7 +25,7 @@ public partial class _Default : System.Web.UI.Page
 
         try
         {
-            tableList = XMLFile.Load_XML();
+            tableList = db.getTables();
         }
         catch (Exception ex)
         {

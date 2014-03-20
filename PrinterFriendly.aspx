@@ -17,48 +17,21 @@
     <%
         Response.Write("<table border=1 id='printTable'>" +
             "<thead><tr><th>Table</th><th>Chairs</th><th>Email</th><th>Name</th><th>School</th><th>Taken</th><th>Time</th><th>Phone</th><th>Comment</th></tr></thead></tbody>");
-        for(int i = 0; i < tableList.Count; i++)
-        {
-            Dictionary<string, int> uniqueSeats = new Dictionary<string, int>();
-            for(int j = 0; j < tableList[i].chairs.Count; j++)
-            {
-                try
-                {
-                    if(tableList[i].chairs[j].email != "")
-                        uniqueSeats.Add(tableList[i].chairs[j].email, 1);
-                }
-                catch (ArgumentException)
-                {
-                    uniqueSeats[tableList[i].chairs[j].email] += 1;
-                }
-            }
-
-            if (uniqueSeats.Count > 0)
-            {
-                Response.Write("<tr><td>" + (i + 1) + "</td>");
-
-                foreach (KeyValuePair<string, int> chairGroup in uniqueSeats)
-                {
-                    for (int j = 0; j < tableList[i].chairs.Count; j++)
-                    {
-                        if (chairGroup.Key.Equals(tableList[i].chairs[j].email))
-                        {
-                            Response.Write("<td>" + chairGroup.Value + "</td>");
-                            Response.Write("<td>" + tableList[i].chairs[j].email + "</td>");
-                            Response.Write("<td>" + tableList[i].chairs[j].name + "</td>");
-                            Response.Write("<td>" + tableList[i].chairs[j].school + "</td>");
-                            Response.Write("<td>" + tableList[i].chairs[j].taken.ToString() + "</td>");
-                            Response.Write("<td>" + tableList[i].chairs[j].time.ToString() + "</td>");
-                            Response.Write("<td>" + tableList[i].chairs[j].phone + "</td>");
-                            Response.Write("<td>" + tableList[i].chairs[j].comment + "</td></tr>");
-                            break;
-                        }
-
-                    }
-
-                }
-            }
             
+        foreach (TableGroup singleTable in tableList)
+        {
+            if (singleTable.chairs.Count > 0)
+            {
+                foreach (Chair singleChair in singleTable.chairs)
+                {
+                    Response.Write("<td>" + singleTable.tableNumber + "</td>");
+                    Response.Write("<td>" + singleChair.occupant.email + "</td>");
+                    Response.Write("<td>" + singleChair.occupant.name + "</td>");
+                    Response.Write("<td>" + singleChair.occupant.school + "</td>");
+                    Response.Write("<td>" + singleChair.occupant.phone + "</td>");
+                    Response.Write("<td>" + singleChair.occupant.comment + "</td></tr>");
+                }
+            }
         }
         Response.Write("</tbody></table>\n");
          %>

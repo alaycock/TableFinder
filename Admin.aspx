@@ -16,7 +16,7 @@
     <div style="margin-top:20px">
     <b>Remove User</b><br />Enter e-mail of user to remove all instances from the database:<br />
     <asp:TextBox ID="emailToRemove" runat="server" Width="200" />
-    <asp:Button ID="button_removeEmail" runat="server" OnClick="removeEmailFromXML" Text="Submit" />
+    PUT A BUTTON IN HERE
     </div>
 
     <div style="margin-top:20px">
