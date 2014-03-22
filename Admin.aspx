@@ -20,7 +20,13 @@
     </div>
 
     <div style="margin-top:20px">
-    <b>Reset Database</b><br />This will reset the ENTIRE DATABASE, a backup will be made:<br />
+    <b>Add users</b><br />Add a new user to the system<br />
+    <asp:TextBox ID="emailToAdd" TextMode="MultiLine" runat="server" Width="200" />
+    <asp:Button ID="submit_emailToAdd" runat="server" OnClick="addEmail" Text="Submit" />
+    </div>
+
+    <div style="margin-top:20px">
+    <b>Reset Database</b><br />This will reset the ENTIRE DATABASE, there is no way of recovering this data<br />
     <asp:Button ID="resetButton" runat="server" OnClientClick="return confirm('This will remove everything, are you sure?')" OnClick="resetChairs" Text="Submit" />
     </div>
 
@@ -38,7 +44,7 @@
         foreach (TableGroup table in tableList)
         {
             Response.Write("<table>" +
-                "<tr><th>Chair</th><th>Email</th><th>Name</th><th>School</th><th>Time</th><th>Phone</th><th>Comment</th></tr>");
+                "<tr><th>Chair</th><th>Email</th><th>Name</th><th>School</th><th>Phone</th><th>Comment</th></tr>");
             foreach(Chair chair in table.chairs)
             {
                 Person occupant = chair.occupant;

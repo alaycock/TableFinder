@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Security.Cryptography;
 using MySql.Data.MySqlClient;
+using System.Text;
 
 /// <summary>
 /// Summary description for Database
@@ -63,39 +64,47 @@ public class Database
         if (this.OpenConnection())
         {
             MySqlCommand cmd = new MySqlCommand(query, connection);
+
+            foreach (MySqlParameter param in parameters)
+                cmd.Parameters.Add(param);
+
             MySqlDataReader reader = cmd.ExecuteReader();
             byte[] databaseHash = new byte[65535];
             byte[] salt = new byte[32];
-            byte[] inputHash;
 
-            reader.Read();
-            
-
-            reader.GetBytes(0, 0, databaseHash, 0, 65535);
-            reader.GetBytes(1, 0, salt, 0, 32);
-            inputHash = GenerateSaltedHash(toBytes(passwordInput), salt);
-            
+            while (reader.Read())
+            {
+                databaseHash = (byte[])reader["passwordHash"];
+                reader.GetBytes(1, 0, salt, 0, 32);
+            }
 
             reader.Close();
             this.CloseConnection();
 
-            return CompareByteArrays(inputHash, databaseHash);
+            return ConfirmPassword(passwordInput, databaseHash, salt);
         }
-        else
-            return false;
-
+        return true;
     }
 
-    static byte[] toBytes(string str)
+    public void create_user(string emailInput, string passwordInput)
     {
-        byte[] bytes = new byte[str.Length * sizeof(char)];
-        System.Buffer.BlockCopy(str.ToCharArray(), 0, bytes, 0, bytes.Length);
-        return bytes;
+        byte[] salt = new byte[32];
+        RandomNumberGenerator RNG = RandomNumberGenerator.Create();
+        RNG.GetNonZeroBytes(salt);
+        byte[] inputHash = Hash(passwordInput, salt);
+
+        string query = "INSERT INTO users (email, passwordHash, passwordSalt) VALUES (@email, @pwhash, @pwsalt)";
+        List<MySqlParameter> parameters = new List<MySqlParameter>();
+        parameters.Add(new MySqlParameter("@email", emailInput));
+        parameters.Add(new MySqlParameter("@pwhash", inputHash));
+        parameters.Add(new MySqlParameter("@pwsalt", salt));
+
+        executeNonReadingQuery(query, parameters);
     }
 
     public void executeNonReadingQuery(string strSQL, List<MySqlParameter> paramaters)
     {
-        if (this.OpenConnection() == true)
+        if (this.OpenConnection())
         {
             MySqlCommand cmd = new MySqlCommand(strSQL, connection);
             foreach (MySqlParameter param in paramaters)
@@ -104,6 +113,8 @@ public class Database
             cmd.ExecuteNonQuery();
             this.CloseConnection();
         }
+        else
+            throw new Exception("Could not open connection to database.");
     }
 
     public List<TableGroup> getTables()
@@ -149,39 +160,21 @@ public class Database
         return tables;
     }
 
-    private static byte[] GenerateSaltedHash(byte[] plainText, byte[] salt)
+    private static byte[] Hash(string value, byte[] salt)
     {
-        HashAlgorithm algorithm = new SHA256Managed();
-
-        byte[] plainTextWithSaltBytes =
-          new byte[plainText.Length + salt.Length];
-
-        for (int i = 0; i < plainText.Length; i++)
-        {
-            plainTextWithSaltBytes[i] = plainText[i];
-        }
-        for (int i = 0; i < salt.Length; i++)
-        {
-            plainTextWithSaltBytes[plainText.Length + i] = salt[i];
-        }
-
-        return algorithm.ComputeHash(plainTextWithSaltBytes);
+        return Hash(Encoding.UTF8.GetBytes(value), salt);
     }
 
-    private static bool CompareByteArrays(byte[] array1, byte[] array2)
+    private static byte[] Hash(byte[] value, byte[] salt)
     {
-        if (array1.Length != array2.Length)
-        {
-            return false;
-        }
+        byte[] saltedValue = value.Concat(salt).ToArray();
+        return new SHA256Managed().ComputeHash(saltedValue);
+    }
 
-        for (int i = 0; i < array1.Length; i++)
-        {
-            if (array1[i] != array2[i])
-            {
-                return false;
-            }
-        }
-        return true;
+    private bool ConfirmPassword(string password, byte[] passwordHash, byte[] salt)
+    {
+        byte[] newPasswordHash = new byte[65535];
+        newPasswordHash = Hash(password, salt);
+        return passwordHash.SequenceEqual(newPasswordHash);
     }
 }

@@ -16,7 +16,7 @@
     <div style="margin-top:20px">
     <%
         Response.Write("<table border=1 id='printTable'>" +
-            "<thead><tr><th>Table</th><th>Chairs</th><th>Email</th><th>Name</th><th>School</th><th>Taken</th><th>Time</th><th>Phone</th><th>Comment</th></tr></thead></tbody>");
+            "<thead><tr><th>Table</th><th>Chairs</th><th>Email</th><th>Name</th><th>School</th><th>Phone</th><th>Comment</th></tr></thead></tbody>");
             
         foreach (TableGroup singleTable in tableList)
         {

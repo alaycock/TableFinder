@@ -4,7 +4,9 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Web.Security;
 using System.Windows.Forms;
+using System.Net.Mail;
 
 
 public partial class _Default : System.Web.UI.Page
@@ -23,16 +25,50 @@ public partial class _Default : System.Web.UI.Page
         return path;
     }
 
+    protected void addEmail(object sender, EventArgs e)
+    {
+        try
+        {
+            string password = Membership.GeneratePassword(12, 3);
+            db.create_user(emailToAdd.Text, password);
+            sendEmail(emailToAdd.Text, password);
+        }
+        catch (Exception ex)
+        {
+            errorMessage = String.Format("An error occurred: {0}", ex.Message);
+        }
+    }
+
+    private void sendEmail(string emailAddress, string password)
+    {
+        MailMessage outgoingMessage = new MailMessage();
+        outgoingMessage.From = new MailAddress(Config.SMTP_FROM_EMAIL, Config.SMTP_FROM_NAME);
+        outgoingMessage.To.Add(emailAddress);
+        outgoingMessage.Subject = String.Format(Config.SMTP_NEWUSER_SUBJECT, Config.EVENT_NAME);
+
+        outgoingMessage.Body = String.Format(Config.SMTP_NEWUSER_BODY,
+            Config.EVENT_NAME,
+            Config.EVENT_HOST_NAME,
+            Config.URL,
+            password,
+            Config.EVENT_HOST_NAME);
+
+        SmtpClient server = new SmtpClient(Config.SMTP_SERVER, Config.SMTP_PORT);
+        server.UseDefaultCredentials = true;
+        server.EnableSsl = false;
+        server.Send(outgoingMessage);
+    }
+
     // Driver method
     protected void Page_Load(object sender, EventArgs e)
     {
         
         tableList = db.getTables();
 
-        if (Session.IsNewSession == true || (bool)Session["AdminLoggedIn"] == false)
+        if (Session.IsNewSession == true)
         {
-            Session["AdminLoggedIn"] = false;
-            Response.Redirect("login.aspx");
+            Session["AdminLoggedIn"] = true;
+            Response.Redirect("Admin.aspx");
         }
 
         try

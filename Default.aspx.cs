@@ -46,10 +46,10 @@ public partial class _Default : System.Web.UI.Page
 
             if (!string.IsNullOrEmpty(Request.Form[3]))
             {
-                Session["name"] = Request.Form[3];
-                Session["email"] = Request.Form[4];
-                Session["phone"] = Request.Form[5];
-                Session["school"] = Request.Form[6];
+                Session["name"] = "Name not set";
+                Session["email"] = "email not set";
+                Session["phone"] = "phone not set";
+                Session["school"] = "school not set";
             }
             else
             {
@@ -96,7 +96,7 @@ public partial class _Default : System.Web.UI.Page
         tableNum.DataValueField = "Value";
         tableNum.DataBind();
 
-        load_chair_helper(1);
+        //load_chair_helper(1);
         
         cartView = new DataView(remakeCartDataTable());
         ShoppingCart.DataSource = cartView;
@@ -160,7 +160,7 @@ public partial class _Default : System.Web.UI.Page
     protected void ddl_changeChairNums(object sender, EventArgs e)
     {
         int selectedTable = Convert.ToInt32(tableNum.SelectedValue.ToString());
-        load_chair_helper(selectedTable);
+        //load_chair_helper(selectedTable);
     }
 
     // Show the correct number of seats available per table
@@ -171,16 +171,6 @@ public partial class _Default : System.Web.UI.Page
         chairListDataTable.Columns.Add(new DataColumn("Value", typeof(int)));
 
         int freeCounter = 0;
-
-
-        string result = "";
-        foreach (PropertyDescriptor descriptor in TypeDescriptor.GetProperties(tableNum))
-        {
-            string name = descriptor.Name;
-            object value = descriptor.GetValue(tableNum);
-            result += name + " = " + value + ", ";
-            
-        }
 
         for (int i = 0; i < tables[Convert.ToInt32(tableNum.SelectedValue) - 1].chairs.Count; i++)
         {
@@ -278,7 +268,7 @@ public partial class _Default : System.Web.UI.Page
 
         MailMessage outgoingMessage = new MailMessage();
         outgoingMessage.From = new MailAddress(Config.SMTP_FROM_EMAIL, Config.SMTP_FROM_NAME);
-        outgoingMessage.Bcc.Add(Config.SMTP_CONFIRM_EMAIL);
+        outgoingMessage.Bcc.Add(Config.EVENT_HOST_EMAIL);
         outgoingMessage.To.Add(emailAddress);
         outgoingMessage.Subject = Config.SMTP_CONFIRM_SUBJECT;
 
@@ -289,8 +279,8 @@ public partial class _Default : System.Web.UI.Page
             labelSchool.Text,
             seatString,
             cost,
-            Config.SMTP_CONFIRM_NAME,
-            Config.SMTP_CONFIRM_EMAIL);
+            Config.EVENT_HOST_NAME,
+            Config.EVENT_HOST_EMAIL);
 
         SmtpClient server = new SmtpClient(Config.SMTP_SERVER, Config.SMTP_PORT);
         server.EnableSsl = false;

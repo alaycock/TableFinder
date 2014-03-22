@@ -19,7 +19,7 @@
             </tr>
             <tr>
                 <td>
-                    <asp:TextBox ID="passwordTextbox" runat="server" Width="200" Text="Passcode" onfocus="if (this.value == 'Passcode') this.value='';" onblur="if (this.value == '') this.value='Passcode';"/>
+                    <asp:TextBox ID="passwordTextbox" runat="server" Width="200" TextMode="Password" Text="Passcode" onfocus="if (this.value == 'Passcode') this.value='';" onblur="if (this.value == '') this.value='Passcode';"/>
                 </td>
                 <td class='error'>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server"

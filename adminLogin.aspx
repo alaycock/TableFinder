@@ -15,7 +15,7 @@
             </tr>
             <tr>
                 <td>
-                    <asp:TextBox ID="passwordTextbox" runat="server" Width="200" Text="Password" onfocus="if (this.value == 'Passcode') this.value='';" onblur="if (this.value == '') this.value='Passcode';"/>
+                    <asp:TextBox ID="passwordTextbox" runat="server" Width="200" TextMode="Password" Text="Password" onfocus="if (this.value == 'Passcode') this.value='';" onblur="if (this.value == '') this.value='Passcode';"/>
                 </td>
             </tr>    
             <tr>
