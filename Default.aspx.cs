@@ -16,77 +16,73 @@ public partial class _Default : System.Web.UI.Page
 
     protected string errorMessage = "";
 
-    protected List<TableGroup> tables;
-    protected List<Pair> cartItems = new List<Pair>();
+    protected Dictionary<string, string> userInfo;
+    protected Dictionary<int, TableGroup> tables;
+    protected Dictionary<int, TableGroup> cartItems = new Dictionary<int, TableGroup>();
     protected DataView cartView = new DataView();
 
-    // Driver method
     protected void Page_Load(object sender, EventArgs e)
     {
 
         if (Session.IsNewSession == true || Session["LoggedIn"] == null)
-        {
-            Session["timedOut"] = true;
             Response.Redirect("login.aspx");
-        }
 
-        try
-        {
+        //try
+        //{
             Database db = new Database();
             tables = db.getTables();
-        }
+            userInfo = db.getUser(Session["email"].ToString());
+        /*}
         catch (Exception ex)
         {
-            errorMessage = "Could not load database. <br>" + ex.Message;
-        }
-
+            errorMessage = "Could not load database: " + ex.Message;
+        }*/
+        
         if (!IsPostBack)
         {
-            setup_input_fields();
+            reloadSelectionDropdown();
 
-            if (!string.IsNullOrEmpty(Request.Form[3]))
-            {
-                Session["name"] = "Name not set";
-                Session["email"] = "email not set";
-                Session["phone"] = "phone not set";
-                Session["school"] = "school not set";
-            }
-            else
-            {
-                errorMessage = "Error retriving user information. Please go back and try again.";
-                return;
-            }
+            emailTextbox.Text = userInfo["email"];
+            nameTextbox.Text = userInfo["name"];
+            phoneTextbox.Text = userInfo["phone"];
+            schoolTextbox.Text = userInfo["school"];
+            comments.Text = userInfo["comment"];
         }
         else
         {
             errorMessage = ViewState["errormsg"] as String;
-            cartItems = ViewState["cartItems"] as List<Pair>;
+            cartItems = ViewState["cartItems"] as Dictionary<int, TableGroup>;
 
             cartView = new DataView(remakeCartDataTable());
             ShoppingCart.DataSource = cartView;
             ShoppingCart.DataBind();
         }
+    }
 
-        labelName.Text = Session["name"].ToString();
-        labelEmail.Text = Session["email"].ToString();
-        labelPhone.Text = Session["phone"].ToString();
-        labelSchool.Text = Session["school"].ToString();
+    private bool isNull(Object obj)
+    {
+        return obj == null;
     }
 
     // Setup the dropdown lists for tables and chairs
-    private void setup_input_fields()
+    private void reloadSelectionDropdown()
     {
         DataTable tablesDataTable = new DataTable();
         tablesDataTable.Columns.Add(new DataColumn("Text", typeof(String)));
         tablesDataTable.Columns.Add(new DataColumn("Value", typeof(int)));
 
-        for (int i = 0; i < tables.Count; i++)
+        foreach (TableGroup singleTable in tables.Values)
         {
-            if (!tables[i].isFull())
+            int seatsAvailable = singleTable.seatsAvailable();
+
+            if (cartItems.Keys.Contains(singleTable.tableNumber))
+                seatsAvailable -= cartItems[singleTable.tableNumber].seatsTaken();
+
+            if (seatsAvailable > 0)
             {
                 DataRow dr = tablesDataTable.NewRow();
-                dr[0] = tables[i].tableNumber;
-                dr[1] = tables[i].tableNumber;
+                dr[0] = singleTable.tableNumber;
+                dr[1] = singleTable.tableNumber;
                 tablesDataTable.Rows.Add(dr);
             }
         }
@@ -96,7 +92,7 @@ public partial class _Default : System.Web.UI.Page
         tableNum.DataValueField = "Value";
         tableNum.DataBind();
 
-        //load_chair_helper(1);
+        reloadChairOptions( Convert.ToInt32(tableNum.SelectedValue.ToString()) );
         
         cartView = new DataView(remakeCartDataTable());
         ShoppingCart.DataSource = cartView;
@@ -105,35 +101,45 @@ public partial class _Default : System.Web.UI.Page
         ViewState["cartItems"] = cartItems;
     }
 
+
+
     // For when the button is clicked to add a table/chair combo to the cart
     protected void button_addToCart(object sender, EventArgs e)
     {
-        for (int index = 0; index < cartItems.Count; index++)
+        int chairsSelected = Convert.ToInt32(chairNum.SelectedItem.Text);
+        int tableNumber = Convert.ToInt32(tableNum.SelectedItem.Text);
+
+        int seatsAvailable = cartItems.Keys.Contains(tableNumber) ?
+            cartItems[tableNumber].seatsAvailable() : Config.SEATS_PER_TABLE;
+
+        if (tableNumber > Config.TOTAL_TABLES || chairsSelected > seatsAvailable)
+            throw new IndexOutOfRangeException("Number of tables or chairs exceeds the limit.");
+
+        TableGroup newTable;
+        if (cartItems.Keys.Contains(tableNumber))
         {
-            if ((int)cartItems[index].First == Convert.ToInt32(tableNum.SelectedItem.Text))
-            {
-                errorMessage = "This table has already been selected. If you wish to add more people, " +
-                    "please remove it from your cart, and add it with the total number of people you want " +
-                    "at the table.";
-                return;
-            }
+            chairsSelected += cartItems[tableNumber].seatsTaken();
+            cartItems.Remove(tableNumber);
         }
 
-        DataTable cartTable = remakeCartDataTable();
+        newTable = new TableGroup(tableNumber);
 
-        DataRow row;
-        row = cartTable.NewRow();
-        row[0] = tableNum.SelectedItem.Text;
-        row[1] = chairNum.SelectedItem.Text;
-        
-        cartTable.Rows.Add(row);
+        for (int i = 0; i < chairsSelected; i++)
+        {
+            Chair newSeat = new Chair(null);
+            newTable.addSeat(newSeat);
+        }
+
+        cartItems.Add(tableNumber, newTable);
+
+        reloadSelectionDropdown();
+
+        DataTable cartTable = remakeCartDataTable();
 
         cartView = new DataView(cartTable);
 
         ShoppingCart.DataSource = cartView;
         ShoppingCart.DataBind();
-
-        cartItems.Add(new Pair(Convert.ToInt32(tableNum.SelectedItem.Text),Convert.ToInt32(chairNum.SelectedItem.Text)));
 
         ViewState["cartItems"] = cartItems;
 
@@ -146,11 +152,11 @@ public partial class _Default : System.Web.UI.Page
         cartTable.Columns.Add("Number of Chairs", typeof(string));
 
         DataRow row;
-        foreach (Pair cartItem in cartItems)
+        foreach (TableGroup cartItem in cartItems.Values)
         {
             row = cartTable.NewRow();
-            row[0] = cartItem.First;
-            row[1] = cartItem.Second;
+            row[0] = cartItem.tableNumber;
+            row[1] = cartItem.seatsTaken();
             cartTable.Rows.Add(row);
         }
         return cartTable;
@@ -160,22 +166,25 @@ public partial class _Default : System.Web.UI.Page
     protected void ddl_changeChairNums(object sender, EventArgs e)
     {
         int selectedTable = Convert.ToInt32(tableNum.SelectedValue.ToString());
-        //load_chair_helper(selectedTable);
+        reloadChairOptions(selectedTable);
     }
 
     // Show the correct number of seats available per table
-    private void load_chair_helper(int selectedTable)
+    private void reloadChairOptions(int selectedTable)
     {
         DataTable chairListDataTable = new DataTable();
         chairListDataTable.Columns.Add(new DataColumn("Text", typeof(String)));
         chairListDataTable.Columns.Add(new DataColumn("Value", typeof(int)));
 
         int freeCounter = 0;
+        int seatsAvailable = tables[selectedTable].seatsAvailable();
+        if (cartItems.Keys.Contains(selectedTable))
+            seatsAvailable -= cartItems[selectedTable].seatsTaken();
 
-        for (int i = 0; i < tables[Convert.ToInt32(tableNum.SelectedValue) - 1].chairs.Count; i++)
+        for (int i = 0; i < seatsAvailable; i++)
         {
             DataRow dr = chairListDataTable.NewRow();
-            dr[0] = freeCounter++ + 1;
+            dr[0] = 1 + freeCounter++;
             dr[1] = i;
             chairListDataTable.Rows.Add(dr);
         }
@@ -189,9 +198,8 @@ public partial class _Default : System.Web.UI.Page
     private string generateHTMLTableForCart()
     {
         string htmlCart = "<table><tr><th>Table</th><th>Number of Chairs</th></tr>\n";
-        foreach (Pair row in cartItems)
-            if (row.First != null && row.Second != null)
-                htmlCart += "<tr><td>" + row.First + "</td><td>" + row.Second + "</td></tr>\n";
+        foreach (TableGroup singleTable in cartItems.Values)
+            htmlCart += "<tr><td>" + singleTable.tableNumber + "</td><td>" + singleTable.seatsTaken() + "</td></tr>\n";
 
         htmlCart += "</table>\n";
         return htmlCart;
@@ -200,15 +208,9 @@ public partial class _Default : System.Web.UI.Page
     //Currently only used for deleting items, but can be extended to also edit the list of necessary
     protected void ShoppingCart_ItemCommand(object sender, DataGridCommandEventArgs e)
     {
-        for (int index=0; index < cartItems.Count; index++)
-        {   
-            if ((int)cartItems[index].First == Convert.ToInt32(e.Item.Cells[0].Text))
-            {
-                cartItems.RemoveAt(index);
-                break;
-            }
-        }
+        cartItems.Remove(Convert.ToInt32(e.Item.Cells[0].Text));
 
+        reloadSelectionDropdown();
         remakeCartDataTable();
         cartView = new DataView(remakeCartDataTable());
         ShoppingCart.DataSource = cartView;
@@ -229,7 +231,7 @@ public partial class _Default : System.Web.UI.Page
 
         try
         {
-            sendEmail(labelEmail.Text);
+            //sendEmail(labelEmail.Text);
 
             // Redo this stuff to actually submit to the DB.
 
@@ -250,15 +252,15 @@ public partial class _Default : System.Web.UI.Page
     {
         int cost = 0;
         for (int i = 0; i < cartItems.Count; i++)
-            cost += (int)cartItems[i].Second * Config.SEAT_PRICE;
+            cost += (int)cartItems[i].seatsTaken() * Config.SEAT_PRICE;
         return cost;
     }
 
     private string generateSeatString()
     {
         string seatString = "";
-        for (int i = 0; i < cartItems.Count; i++)
-            seatString += "Table #" + cartItems[i].First + " for " + cartItems[i].Second + " seats\n";
+        foreach (TableGroup singleTable in cartItems.Values)
+            seatString += "Table #" + singleTable.tableNumber + " for " + singleTable.seatsTaken() + " seats\n";
         return seatString;
     }
 
@@ -275,8 +277,8 @@ public partial class _Default : System.Web.UI.Page
         string seatString = generateSeatString();
 
         outgoingMessage.Body = String.Format(Config.SMTP_CONFIRM_BODY,
-            labelName.Text,
-            labelSchool.Text,
+            nameTextbox.Text, 
+            schoolTextbox.Text,
             seatString,
             cost,
             Config.EVENT_HOST_NAME,
@@ -287,4 +289,60 @@ public partial class _Default : System.Web.UI.Page
         server.UseDefaultCredentials = true;
         server.Send(outgoingMessage);
     }
+
+    public void renderTables(int rows, int columns, int startingIndex)
+    {
+        for (int rowI = 0; rowI < rows; rowI++)
+        {
+            Response.Write("<div style=\"width:960px; height:85px; position:relative; float:left;\">\n");
+            for (int colI = 0; colI < columns; colI++)
+            {
+                string tableColorLocation;
+                int tableIndex = (rowI * columns) + colI + startingIndex;
+
+                if (tables[tableIndex].isFull())
+                    tableColorLocation = "images/redCircle.png";
+                else if (cartItems.Keys.Contains(tableIndex) && Config.SEATS_PER_TABLE == tables[tableIndex].seatsTaken() + cartItems[tableIndex].seatsTaken())
+                    tableColorLocation = "images/yellowCircle.png";
+                else
+                    tableColorLocation = "images/blueCircle.png";
+
+                Response.Write("<div style=\"width:85px; height:85px; position:relative; float:left;text-align: center;\">\n");
+                Response.Write("<img src=\"" + tableColorLocation +
+                    "\" style=\"left:24px; top:24px; position:absolute;\" width=37 height=37>\n");
+                Response.Write("<p style=\"position: relative; margin-left:auto; margin-right:auto; margin-top:32px;\">" + (tableIndex) + "</p>\n");
+
+                for (int chairI = 0; chairI < Config.SEATS_PER_TABLE; chairI++)
+                {
+                    double chairAngle = chairI * Math.PI / 5;
+                    double height = Math.Cos(chairAngle) * 32;
+                    double width = Math.Sin(chairAngle) * 32;
+                    int leftLoc = (int)width - 8 + 42; // -8 for the offset of the size of the chair image, + 42 to correctly place it in around the table
+                    int topLoc = (int)height - 8 + 42;
+
+                    if (chairI > tables[tableIndex].seatsAvailable())
+                    {
+                        Response.Write("<img style=\"left:" + leftLoc + "px; top:" + topLoc +
+                            "px; position:absolute; width=16 height=16\" src=\"images/redCircle.png\" width=16 height=16>\n");
+                    }
+                    else if (cartItems.Keys.Contains(tableIndex) && chairI < tables[tableIndex].seatsTaken() + cartItems[tableIndex].seatsTaken())
+                    {
+                        Response.Write("<img style=\"left:" + leftLoc + "px; top:" + topLoc +
+                         "px; position:absolute; width=16 height=16\" src=\"images/yellowCircle.png\" width=16 height=16>\n");
+                    }
+                    else
+                    {
+                        Response.Write("<img style=\"left:" + leftLoc + "px; top:" + topLoc +
+                            "px; position:absolute; width=16 height=16\" src=\"images/blueCircle.png\" width=16 height=16>\n");
+                    }
+                }
+                Response.Write("</div>");
+            }
+            Response.Write("</div>");
+        }
+    }
 }
+
+
+
+

@@ -8,6 +8,7 @@ using System.Text;
 /// <summary>
 /// Summary description for Person
 /// </summary>
+[Serializable]
 public class Person
 {
     public string name;

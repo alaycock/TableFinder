@@ -6,6 +6,7 @@ using System.Web;
 /// <summary>
 /// Summary description for Table
 /// </summary>
+[Serializable]
 public class TableGroup
 {
     public List<Chair> chairs;

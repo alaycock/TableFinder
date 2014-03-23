@@ -27,11 +27,15 @@ public partial class _Default : System.Web.UI.Page
 
     protected void addEmail(object sender, EventArgs e)
     {
+        string[] allEmails = emailToAdd.Text.Split(';');
         try
         {
-            string password = Membership.GeneratePassword(12, 3);
-            db.create_user(emailToAdd.Text, password);
-            sendEmail(emailToAdd.Text, password);
+            foreach (string email in allEmails)
+            {
+                string password = Membership.GeneratePassword(12, 3);
+                db.create_user(email, password);
+                sendEmail(email, password);
+            }
         }
         catch (Exception ex)
         {
@@ -65,11 +69,8 @@ public partial class _Default : System.Web.UI.Page
         
         tableList = db.getTables();
 
-        if (Session.IsNewSession == true)
-        {
-            Session["AdminLoggedIn"] = true;
-            Response.Redirect("Admin.aspx");
-        }
+        if (Session.IsNewSession == true || Session["AdminLoggedIn"] == null)
+            Response.Redirect("adminLogin.aspx");
 
         try
         {

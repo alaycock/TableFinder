@@ -117,9 +117,9 @@ public class Database
             throw new Exception("Could not open connection to database.");
     }
 
-    public List<TableGroup> getTables()
+    public Dictionary<int, TableGroup> getTables()
     {
-        List<TableGroup> tables = new List<TableGroup>();
+        Dictionary<int, TableGroup> tables = new Dictionary<int, TableGroup>();
 
         string query = "SELECT tableNumber, name, email, school, phone, comment FROM chairs LEFT JOIN users ON chairs.userID=users.userID";
 
@@ -140,24 +140,76 @@ public class Database
 
                 int tableNumber = reader.GetInt32("tableNumber");
 
-                if (tables.Contains(new TableGroup(tableNumber)))
+
+                if (tables.Keys.Contains(tableNumber))
                 {
-                    TableGroup existing = tables.Find(x => x.tableNumber.Equals(tableNumber));
-                    existing.addSeat(chair);
+                    tables[tableNumber].addSeat(chair);
                 }
                 else
                 {
                     TableGroup newTable = new TableGroup(tableNumber);
                     newTable.addSeat(chair);
-                    tables.Add(newTable);
+                    tables.Add(tableNumber, newTable);
                 }
-
             }
             reader.Close();
 
             this.CloseConnection();
         }
+
+
+        for (int i = 1; i <= Config.TOTAL_TABLES; i++)
+        {
+            if (!tables.Keys.Contains(i))
+            {
+                TableGroup newTable = new TableGroup(i);
+                tables.Add(i, newTable);
+            }
+        }
+
         return tables;
+    }
+
+    public Dictionary<string, string> getUser(string emailInput)
+    {
+        Dictionary<string, string> returnDict = new Dictionary<string, string>();
+        string query = "SELECT email, name, school, phone, comment, lastupdate FROM users WHERE email=@email";
+        List<MySqlParameter> parameters = new List<MySqlParameter>();
+        parameters.Add(new MySqlParameter("@email", emailInput));
+
+        if (this.OpenConnection())
+        {
+            MySqlCommand cmd = new MySqlCommand(query, connection);
+
+            foreach (MySqlParameter param in parameters)
+                cmd.Parameters.Add(param);
+
+            MySqlDataReader reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+
+                returnDict.Add("email", getEmptyIfNull(reader, 0));
+                returnDict.Add("name", getEmptyIfNull(reader, 1));
+                returnDict.Add("school", getEmptyIfNull(reader, 2));
+                returnDict.Add("phone", getEmptyIfNull(reader, 3));
+                returnDict.Add("comment", getEmptyIfNull(reader, 4));
+                returnDict.Add("lastupdate", getEmptyIfNull(reader, 5));
+            }
+
+            reader.Close();
+            this.CloseConnection();
+
+        }
+        return returnDict;
+    }
+
+    private string getEmptyIfNull(MySqlDataReader reader, int index)
+    {
+        if (!reader.IsDBNull(index))
+            return reader.GetString(index);
+        
+        return "";
     }
 
     private static byte[] Hash(string value, byte[] salt)
