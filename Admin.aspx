@@ -41,7 +41,7 @@
     <div style="margin-top:20px">
     <%
         int counter = 0;
-        foreach (TableGroup table in tableList)
+        foreach (TableGroup table in tableList.Values)
         {
             Response.Write("<table>" +
                 "<tr><th>Chair</th><th>Email</th><th>Name</th><th>School</th><th>Phone</th><th>Comment</th></tr>");

@@ -18,7 +18,7 @@
         Response.Write("<table border=1 id='printTable'>" +
             "<thead><tr><th>Table</th><th>Chairs</th><th>Email</th><th>Name</th><th>School</th><th>Phone</th><th>Comment</th></tr></thead></tbody>");
             
-        foreach (TableGroup singleTable in tableList)
+        foreach (TableGroup singleTable in tableList.Values)
         {
             if (singleTable.chairs.Count > 0)
             {

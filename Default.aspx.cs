@@ -47,6 +47,7 @@ public partial class _Default : System.Web.UI.Page
             phoneTextbox.Text = userInfo["phone"];
             schoolTextbox.Text = userInfo["school"];
             comments.Text = userInfo["comment"];
+            Session["userInfo"] = userInfo;
         }
         else
         {
@@ -195,17 +196,6 @@ public partial class _Default : System.Web.UI.Page
         chairNum.DataBind();
     }
 
-    private string generateHTMLTableForCart()
-    {
-        string htmlCart = "<table><tr><th>Table</th><th>Number of Chairs</th></tr>\n";
-        foreach (TableGroup singleTable in cartItems.Values)
-            htmlCart += "<tr><td>" + singleTable.tableNumber + "</td><td>" + singleTable.seatsTaken() + "</td></tr>\n";
-
-        htmlCart += "</table>\n";
-        return htmlCart;
-    }
-
-    //Currently only used for deleting items, but can be extended to also edit the list of necessary
     protected void ShoppingCart_ItemCommand(object sender, DataGridCommandEventArgs e)
     {
         cartItems.Remove(Convert.ToInt32(e.Item.Cells[0].Text));
@@ -227,32 +217,50 @@ public partial class _Default : System.Web.UI.Page
             return;
         }
 
-        Session["outputTable"] = generateHTMLTableForCart();
+        userInfo["name"] = nameTextbox.Text;
+        userInfo["phone"] = phoneTextbox.Text;
+        userInfo["school"] = schoolTextbox.Text;
+        userInfo["comment"] = comments.Text;
+
+        Session["userInfo"] = userInfo;
+        Session["cart"] = cartItems;
+        Session["totalCost"] = calculateCost();
 
         try
         {
-            //sendEmail(labelEmail.Text);
-
-            // Redo this stuff to actually submit to the DB.
-
-            //tables = prepWrite(tables);
-            //XMLFile.writetablesToXML(tables);
+            Database db = new Database();
+            db.update_user(userInfo["email"], userInfo["name"], userInfo["school"], userInfo["phone"], userInfo["comment"]);
+            db.purchaseChairs(cartItems, userInfo["email"]);
+        }
+        catch (ArgumentException ex)
+        {
+            errorMessage = "Error: " + ex.Message;
+            return;
         }
         catch (Exception ex)
         {
-            errorMessage = "Could not store your selection, please try again and ignore the email you have recieved.<br>If the problem persists, please contact Robin Laycock with the following message:<br>" + ex.Message;
+            errorMessage = "Could not store your selection, contact the system administrator with the following message:<br>" + ex.Message;
             return;
         }
 
-        Session["comment"] = comments.Text;
+        try
+        {
+            sendEmail(userInfo["email"]);
+        }
+        catch (Exception ex)
+        {
+            errorMessage = "Your selection was stored but a confirmation email could not be sent, contact the system administrator with the following message:<br>" + ex.Message;
+            return;
+        }
         Response.Redirect("~/Confirmation.aspx");
     }
 
     private int calculateCost()
     {
         int cost = 0;
-        for (int i = 0; i < cartItems.Count; i++)
-            cost += (int)cartItems[i].seatsTaken() * Config.SEAT_PRICE;
+        foreach (TableGroup table in cartItems.Values)
+            cost += table.seatsTaken() * Config.SEAT_PRICE;
+
         return cost;
     }
 
@@ -260,7 +268,7 @@ public partial class _Default : System.Web.UI.Page
     {
         string seatString = "";
         foreach (TableGroup singleTable in cartItems.Values)
-            seatString += "Table #" + singleTable.tableNumber + " for " + singleTable.seatsTaken() + " seats\n";
+            seatString += "Table #" + singleTable.tableNumber + " for " + singleTable.seatsTaken() + " seat(s)\n";
         return seatString;
     }
 
@@ -277,12 +285,13 @@ public partial class _Default : System.Web.UI.Page
         string seatString = generateSeatString();
 
         outgoingMessage.Body = String.Format(Config.SMTP_CONFIRM_BODY,
-            nameTextbox.Text, 
-            schoolTextbox.Text,
+            userInfo["name"], 
+            userInfo["school"],
             seatString,
             cost,
             Config.EVENT_HOST_NAME,
-            Config.EVENT_HOST_EMAIL);
+            Config.EVENT_HOST_EMAIL,
+            Config.EVENT_CHEQUE_PAYABLE);
 
         SmtpClient server = new SmtpClient(Config.SMTP_SERVER, Config.SMTP_PORT);
         server.EnableSsl = false;
@@ -290,6 +299,7 @@ public partial class _Default : System.Web.UI.Page
         server.Send(outgoingMessage);
     }
 
+    // Draws the tables onto the page in a grid
     public void renderTables(int rows, int columns, int startingIndex)
     {
         for (int rowI = 0; rowI < rows; rowI++)
@@ -320,7 +330,7 @@ public partial class _Default : System.Web.UI.Page
                     int leftLoc = (int)width - 8 + 42; // -8 for the offset of the size of the chair image, + 42 to correctly place it in around the table
                     int topLoc = (int)height - 8 + 42;
 
-                    if (chairI > tables[tableIndex].seatsAvailable())
+                    if (chairI < tables[tableIndex].seatsTaken())
                     {
                         Response.Write("<img style=\"left:" + leftLoc + "px; top:" + topLoc +
                             "px; position:absolute; width=16 height=16\" src=\"images/redCircle.png\" width=16 height=16>\n");

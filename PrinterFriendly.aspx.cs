@@ -9,7 +9,7 @@ public partial class _Default : System.Web.UI.Page
 {
     private Database db;
     protected string errorMessage = "";
-    protected List<TableGroup> tableList;
+    protected Dictionary<int, TableGroup> tableList;
 
 
     // Driver method

@@ -13,7 +13,7 @@ public partial class _Default : System.Web.UI.Page
 {
     // Variables and structures\
     protected string errorMessage = "";
-    protected List<TableGroup> tableList;
+    protected Dictionary<int, TableGroup> tableList;
     Database db = new Database();
 
     private string GetAssemblyPath()
