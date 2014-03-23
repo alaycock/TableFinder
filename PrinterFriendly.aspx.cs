@@ -17,9 +17,8 @@ public partial class _Default : System.Web.UI.Page
     {
         db = new Database();
         
-        if (Session.IsNewSession == true || (bool)Session["AdminLoggedIn"] == false)
+        if (Session.IsNewSession == true || (bool)Session["AdminLoggedIn"] == null)
         {
-            Session["AdminLoggedIn"] = false;
             Response.Redirect("login.aspx");
         }
 

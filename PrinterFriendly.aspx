@@ -19,18 +19,21 @@
             "<thead><tr><th>Table</th><th>Chairs</th><th>Email</th><th>Name</th><th>School</th><th>Phone</th><th>Comment</th></tr></thead></tbody>");
             
         foreach (TableGroup singleTable in tableList.Values)
-        {
+        {            
             if (singleTable.chairs.Count > 0)
             {
-                foreach (Chair singleChair in singleTable.chairs)
+                List<Person> tableOccupants = new List<Person>();
+                foreach (Chair singleChair in singleTable.chairs.Distinct())
                 {
                     Response.Write("<td>" + singleTable.tableNumber + "</td>");
+                    Response.Write("<td>" + singleTable.seatsTaken() + "</td>");
                     Response.Write("<td>" + singleChair.occupant.email + "</td>");
                     Response.Write("<td>" + singleChair.occupant.name + "</td>");
                     Response.Write("<td>" + singleChair.occupant.school + "</td>");
                     Response.Write("<td>" + singleChair.occupant.phone + "</td>");
                     Response.Write("<td>" + singleChair.occupant.comment + "</td></tr>");
                 }
+
             }
         }
         Response.Write("</tbody></table>\n");

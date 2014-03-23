@@ -10,12 +10,12 @@
         <table style="border-collapse: collapse; border: none;">
             <tr>
                 <td>
-                    <asp:TextBox ID="usernameTextbox" runat="server" Width="200" Text="Username" onfocus="if (this.value == 'Name') this.value='';" onblur="if (this.value == '') this.value='Name';" />
+                    <asp:TextBox ID="usernameTextbox" runat="server" Width="200" placeholder="Username" />
                 </td>
             </tr>
             <tr>
                 <td>
-                    <asp:TextBox ID="passwordTextbox" runat="server" Width="200" TextMode="Password" Text="Password" onfocus="if (this.value == 'Passcode') this.value='';" onblur="if (this.value == '') this.value='Passcode';"/>
+                    <asp:TextBox ID="passwordTextbox" runat="server" Width="200" TextMode="Password" placeholder="Password" />
                 </td>
             </tr>    
             <tr>

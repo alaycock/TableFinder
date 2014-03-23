@@ -10,7 +10,7 @@
         <table style="border-collapse: collapse; border: none;">
             <tr>
                 <td>
-                    <asp:TextBox ID="emailTextbox" runat="server" Width="200" Text="Email" onfocus="if (this.value == 'Email') this.value='';" onblur="if (this.value == '') this.value='Email';"/>
+                    <asp:TextBox ID="emailTextbox" runat="server" Width="200" placeholder="Email"/>
                 </td>
                 <td class='error'>
                     <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="emailTextbox" 
@@ -19,7 +19,7 @@
             </tr>
             <tr>
                 <td>
-                    <asp:TextBox ID="passwordTextbox" runat="server" Width="200" TextMode="Password" Text="Passcode" onfocus="if (this.value == 'Passcode') this.value='';" onblur="if (this.value == '') this.value='Passcode';"/>
+                    <asp:TextBox ID="passwordTextbox" runat="server" Width="200" TextMode="Password" placeholder="Password" />
                 </td>
                 <td class='error'>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server"

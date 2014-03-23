@@ -19,7 +19,7 @@ public partial class _Default : System.Web.UI.Page
     {
         if( usernameTextbox.Text.Equals(Config.ADMIN_USER) && passwordTextbox.Text.Equals(Config.ADMIN_PASSWORD) )
         {
-            Session["LoggedIn"] = true;
+            Session["AdminLoggedIn"] = true;
             Server.Transfer("Admin.aspx");
         }
         else
