@@ -18,7 +18,7 @@ Admin username is `Admin` and password is `hello!@#world123`
 
 ## To do
 
-To do list, in order of priority
+To do list, in no particular order
  * Fix the CSS, it's a bit of a mess and the layout could be significantly better.
  * Unit testing, the code doesn't exactly lend itself to testing right now, so more refacting would be in order before beginning this.
  * More administrative functionality such as modifying user information, modifying table selections, password resets.
