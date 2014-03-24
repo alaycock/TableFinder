@@ -6,24 +6,6 @@ using System.Xml;
 using System.Data;
 using System.Web.UI;
 
-public class Table
-{
-    public List<Chair> chairs;
-    public bool full { get; set; }
-    public int number;
-}
-
-public class Chair
-{
-    public string email;
-    public bool taken;
-    public string name;
-    public string school;
-    public string phone;
-    public DateTime time;
-    public string comment;
-}
-
 public class XMLHandler
 {
     public string filename;
@@ -34,17 +16,17 @@ public class XMLHandler
     }
 
     // Load the XML file with the chair/table information into the code
-    public List<Table> Load_XML()
+    public List<TableGroup> Load_XML()
     {
         if (filename == null)
             throw new Exception("No file associated with XML handler, nothing to load");
-        List<Table> returnTable = new List<Table>();
+        List<TableGroup> returnTable = new List<TableGroup>();
         XDocument xdoc = XDocument.Load(filename);
 
         //Create information about each table
         foreach (XElement tableElement in xdoc.Root.Elements("Table"))
         {
-            Table insertTable = new Table();
+            TableGroup insertTable = new TableGroup();
             insertTable.number = Convert.ToInt32(tableElement.Attribute("number").Value);
 
             if (tableElement.Attribute("full").Value.Equals("false"))

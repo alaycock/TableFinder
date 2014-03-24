@@ -17,21 +17,25 @@ public partial class _Default : System.Web.UI.Page
 
     protected void checkPassword_button(object sender, EventArgs e)
     {
-        if (passwordTextbox.Text.Equals("defaultLogin"))
+        Database db = new Database();
+        //try
+        //{
+
+            if (db.authenticate(emailTextbox.Text, passwordTextbox.Text))
+            {
+                Session["LoggedIn"] = true;
+                Session["email"] = emailTextbox.Text;
+                Server.Transfer("Default.aspx");
+            }
+            else
+            {
+                errorMessage = "Incorrect credentials";
+            }
+        /*}
+        catch (Exception ex)
         {
-            Session["LoggedIn"] = true;
-            Server.Transfer("Default.aspx");
-        }
-        else if (passwordTextbox.Text.Equals("adminLogin"))
-        {
-            Session.Clear();
-            Session["AdminLoggedIn"] = true;
-            Response.Redirect("Admin.aspx");
-        }
-        else
-        {
-            errorMessage = "Incorrect password";
-        }
+            errorMessage = String.Format("Internal error: {0}", ex.Message); 
+        }*/
 
     }
 

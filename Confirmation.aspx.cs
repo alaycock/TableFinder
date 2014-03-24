@@ -10,8 +10,10 @@ public partial class About : System.Web.UI.Page
     protected string name;
     protected string email;
     protected string school;
-    protected string costString;
+    protected int cost;
     protected int seatPrice;
+    protected Dictionary<string, string> userInfo;
+    protected Dictionary<int, TableGroup> cartItems;
 
     protected string errorMessage = "";
 
@@ -22,5 +24,20 @@ public partial class About : System.Web.UI.Page
             Session["timedOut"] = true;
             Response.Redirect("login.aspx");
         }
+        
+        userInfo = (Dictionary<string,string>)Session["userInfo"];
+        cost = (int)Session["totalCost"];
+
+        cartItems = (Dictionary<int, TableGroup>)Session["cart"];
+    }
+
+    protected string generateHTMLTableForCart()
+    {
+        string htmlCart = "<table><tr><th>Table</th><th>Number of Chairs</th></tr>\n";
+        foreach (TableGroup singleTable in cartItems.Values)
+            htmlCart += "<tr><td>" + singleTable.tableNumber + "</td><td>" + singleTable.seatsTaken() + "</td></tr>\n";
+
+        htmlCart += "</table>\n";
+        return htmlCart;
     }
 }

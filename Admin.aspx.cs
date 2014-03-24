@@ -4,16 +4,17 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Web.Security;
 using System.Windows.Forms;
+using System.Net.Mail;
 
 
 public partial class _Default : System.Web.UI.Page
 {
     // Variables and structures\
-    private const string XMLFileLocation = "App_data/XMLFile.xml";
     protected string errorMessage = "";
-    protected List<Table> tableList;
-    private XMLHandler XMLFile;
+    protected Dictionary<int, TableGroup> tableList;
+    Database db = new Database();
 
     private string GetAssemblyPath()
     {
@@ -24,19 +25,56 @@ public partial class _Default : System.Web.UI.Page
         return path;
     }
 
+    protected void addEmail(object sender, EventArgs e)
+    {
+        string[] allEmails = emailToAdd.Text.Split(';');
+        try
+        {
+            foreach (string email in allEmails)
+            {
+                string password = Membership.GeneratePassword(12, 3);
+                db.create_user(email, password);
+                sendEmail(email, password);
+            }
+        }
+        catch (Exception ex)
+        {
+            errorMessage = String.Format("An error occurred: {0}", ex.Message);
+        }
+    }
+
+    private void sendEmail(string emailAddress, string password)
+    {
+        MailMessage outgoingMessage = new MailMessage();
+        outgoingMessage.From = new MailAddress(Config.SMTP_FROM_EMAIL, Config.SMTP_FROM_NAME);
+        outgoingMessage.To.Add(emailAddress);
+        outgoingMessage.Subject = String.Format(Config.SMTP_NEWUSER_SUBJECT, Config.EVENT_NAME);
+
+        outgoingMessage.Body = String.Format(Config.SMTP_NEWUSER_BODY,
+            Config.EVENT_NAME,
+            Config.EVENT_HOST_NAME,
+            Config.URL,
+            password,
+            Config.EVENT_HOST_NAME);
+
+        SmtpClient server = new SmtpClient(Config.SMTP_SERVER, Config.SMTP_PORT);
+        server.UseDefaultCredentials = true;
+        server.EnableSsl = false;
+        server.Send(outgoingMessage);
+    }
+
     // Driver method
     protected void Page_Load(object sender, EventArgs e)
     {
-        XMLFile = new XMLHandler(Server.MapPath(XMLFileLocation));
-        if (Session.IsNewSession == true || (bool)Session["AdminLoggedIn"] == false)
-        {
-            Session["AdminLoggedIn"] = false;
-            Response.Redirect("login.aspx");
-        }
+        
+        tableList = db.getTables();
+
+        if (Session.IsNewSession == true || Session["AdminLoggedIn"] == null)
+            Response.Redirect("adminLogin.aspx");
 
         try
         {
-            tableList = XMLFile.Load_XML();
+            tableList = db.getTables();
         }
         catch (Exception ex)
         {
@@ -44,40 +82,9 @@ public partial class _Default : System.Web.UI.Page
         }
     }
 
-    // Remove a particular user (by email address) from the XML file
-    protected void removeEmailFromXML(object sender, EventArgs e)
-    {
-        foreach (Table tb in tableList)
-            foreach (Chair ch in tb.chairs)
-                if (ch.email.Equals(emailToRemove.Text))
-                {
-                    ch.school = "";
-                    ch.name = "";
-                    ch.email = "";
-                    ch.taken = false;
-                    ch.time = DateTime.MinValue;
-                }
-        XMLFile.writeTablelistToXML(tableList);
-    }
-
     // Reset entire XML file
-    protected void resetXMLFile(object sender, EventArgs e)
+    protected void resetChairs(object sender, EventArgs e)
     {
-        XMLHandler backup = new XMLHandler(Server.MapPath(XMLFileLocation + String.Format(" - BACKUP - {0:yyyy-MM-dd_hh-mm-ss-tt}",DateTime.Now)));
-        backup.writeTablelistToXML(tableList);
-
-        foreach (Table tb in tableList)
-            foreach (Chair ch in tb.chairs)
-            {
-                ch.school = "";
-                ch.name = "";
-                ch.email = "";
-                ch.taken = false;
-                ch.time = DateTime.MinValue;
-                ch.comment = "";
-                ch.phone = "";
-            }
-        XMLFile.writeTablelistToXML(tableList);
-        return;
+        db.resetChairs();
     }
 }
