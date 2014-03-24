@@ -19,7 +19,6 @@ public class Database
             "server={0};user id={1};password={2};persistsecurityinfo=True;database={3};port={4}",
             Config.DBSERVER, Config.DBUSER, Config.DBPASSWORD, Config.DBSCHEMA, Config.DBPORT
             );
-
         connection = new MySqlConnection(connectionString);
 	}
 
