@@ -88,7 +88,9 @@ public partial class _Default : System.Web.UI.Page
             }
         }
 
-        tableNum.DataSource = new DataView(tablesDataTable);
+        DataView dv = new DataView(tablesDataTable);
+        dv.Sort = "Value";
+        tableNum.DataSource = dv;
         tableNum.DataTextField = "Text";
         tableNum.DataValueField = "Value";
         tableNum.DataBind();

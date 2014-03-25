@@ -33,6 +33,10 @@
     <h2>
         This confirms your order for <% Response.Write(Config.EVENT_NAME); %>
     </h2>
+    <h3>
+        <a href="login.aspx">Logout</a>
+    </h3>
+
     <p>Please make cheques out to <% Response.Write(Config.EVENT_CHEQUE_PAYABLE); %>, and they should be received within one week of your order.</p>
     <table class="information">
     <tr><td><b>Name:</b></td><td><% Response.Write(userInfo["name"].ToString()); %></td></tr>
@@ -48,4 +52,5 @@
     <% Response.Write(generateHTMLTableForCart()); %>
 
     <p>If any of the above information is incorrect, please email <% Response.Write(Config.EVENT_HOST_NAME); %> at <% Response.Write(Config.EVENT_HOST_EMAIL); %>.</p>
+    <p>Please do not use the back button as it may cause you to resubmit your seat selection.</p>
 </asp:Content>

@@ -29,6 +29,8 @@ public partial class About : System.Web.UI.Page
         cost = (int)Session["totalCost"];
 
         cartItems = (Dictionary<int, TableGroup>)Session["cart"];
+        Session.Remove("cart");
+        Session.Remove("LoggedIn");
     }
 
     protected string generateHTMLTableForCart()
