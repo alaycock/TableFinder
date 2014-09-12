@@ -16,6 +16,8 @@ Username is `adam@test.com` and password is `pOd{Zd5f:&FH`
 
 Admin username is `Admin` and password is `hello!@#world123`
 
+Note that all emailing functionality is disabled for the demo website, so you cannot create new users, or spam your friends.
+
 ## To do
 
 To do list, in no particular order
